@@ -63,11 +63,51 @@
     return c;
   }
 
+  var filter = 'all';
+
+  function tile(x, lang, lab) {
+    var t = node('a', { 'class': 'store-tile', 'data-kind': x.id, href: safeUrl(x.url), target: '_blank', rel: 'noopener' });
+    t.appendChild(node('span', { 'class': 'store-icon' }, x.icon || ''));
+    t.appendChild(node('span', { 'class': 'store-title' }, pick(x.title, lang)));
+    t.appendChild(node('span', { 'class': 'store-text' }, pick(x.text, lang)));
+    t.appendChild(node('span', { 'class': 'store-open' }, lab.open_store || ''));
+    return t;
+  }
+
+  function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+
   function render(lang) {
+    var lab = (data.labels && (data.labels[lang] || data.labels.en)) || {};
+    var about = document.getElementById('about');
+    var wrap = about && about.querySelector('.store-tiles');
+    if (wrap) {
+      clear(wrap);
+      (data.stores || []).forEach(function (x) { wrap.appendChild(tile(x, lang, lab)); });
+      var st = about.querySelector('.stores-title');
+      if (st) st.textContent = lab.stores_title || '';
+    }
+    var apps = data.apps || [];
+    var kinds = ['android', 'windows', 'amazon'].filter(function (k) {
+      return apps.some(function (a) { return (a.kinds || []).indexOf(k) >= 0; });
+    });
+    if (kinds.indexOf(filter) < 0) filter = 'all';
+    var bar = document.getElementById('apps-filter');
+    if (bar) {
+      clear(bar);
+      if (kinds.length > 1) {
+        [['all', lab.all || 'All']].concat(kinds.map(function (k) { return [k, pick((data.kind_titles || {})[k], lang) || k]; }))
+          .forEach(function (c) {
+            var b = node('button', { type: 'button', 'class': 'chip' + (c[0] === filter ? ' active' : '') }, c[1]);
+            b.addEventListener('click', function () { filter = c[0]; render(document.documentElement.lang === 'en' || document.documentElement.lang === 'de' ? document.documentElement.lang : 'ar'); });
+            bar.appendChild(b);
+          });
+      }
+    }
     var grid = document.querySelector('#apps .apps-grid');
     if (grid) {
-      while (grid.firstChild) grid.removeChild(grid.firstChild);
-      (data.apps || []).forEach(function (a) { grid.appendChild(card(a, lang)); });
+      clear(grid);
+      apps.filter(function (a) { return filter === 'all' || (a.kinds || []).indexOf(filter) >= 0; })
+        .forEach(function (a) { grid.appendChild(card(a, lang)); });
     }
     var p = data.policy || {}, box = document.getElementById('privacy-policy');
     if (box) {

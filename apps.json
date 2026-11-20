@@ -218,5 +218,52 @@
         "website": ""
       }
     }
+  ],
+  "stores": [
+    {
+      "id": "android",
+      "icon": "🤖",
+      "url": "https://play.google.com/store/apps/dev?id=5869876849822493247",
+      "title": {
+        "ar": "تطبيقات أندرويد",
+        "en": "Android apps",
+        "de": "Android-Apps"
+      },
+      "text": {
+        "ar": "حمّل تطبيقاتي لهواتف وأجهزة أندرويد اللوحية من Google Play.",
+        "en": "Get my apps for Android phones and tablets on Google Play.",
+        "de": "Meine Apps für Android-Smartphones und -Tablets bei Google Play."
+      }
+    },
+    {
+      "id": "windows",
+      "icon": "🖥️",
+      "url": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE",
+      "title": {
+        "ar": "تطبيقات ويندوز",
+        "en": "Windows apps",
+        "de": "Windows-Apps"
+      },
+      "text": {
+        "ar": "برامج لحاسوب ويندوز من Microsoft Store.",
+        "en": "Programs for your Windows computer from the Microsoft Store.",
+        "de": "Programme für Ihren Windows-PC aus dem Microsoft Store."
+      }
+    },
+    {
+      "id": "amazon",
+      "icon": "📦",
+      "url": "",
+      "title": {
+        "ar": "تطبيقات أمازون",
+        "en": "Amazon apps",
+        "de": "Amazon-Apps"
+      },
+      "text": {
+        "ar": "تطبيقاتي على Amazon Appstore لأجهزة Fire وأندرويد.",
+        "en": "My apps on the Amazon Appstore for Fire devices and Android.",
+        "de": "Meine Apps im Amazon Appstore für Fire-Geräte und Android."
+      }
+    }
   ]
 }
