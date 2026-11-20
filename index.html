@@ -728,6 +728,24 @@ footer {
           googleServices: "Google Services", 
           metaUsed: "Meta (if used)",
           microsoftUsed: "Microsoft App Center (if used)"
+      },
+      de: {
+          about: "Über mich",
+          apps: "Meine Apps",
+          privacy: "Datenschutz",
+          contact: "Kontakt",
+          title: "Offizielle Seite | Über mich + Meine Apps + Datenschutz",
+          welcome: "Hallo, ich bin",
+          name: "Sami",
+          role: "Android-Entwickler, spezialisiert auf digitale Lösungen mit Fokus auf Einfachheit, Leistung und Datenschutz.",
+          aboutTitle: "Kurzvorstellung",
+          aboutText: "Willkommen in meiner digitalen Welt! Ich bin Sami, ein leidenschaftlicher Entwickler, der Ideen in praktische Apps verwandelt. Seit meinen Anfängen in der Programmierung glaube ich, dass gute Apps echte Probleme mit einer außergewöhnlichen Nutzererfahrung lösen. Jede App, die ich veröffentliche, ist das Ergebnis sorgfältiger Recherche und Entwicklung für hervorragende Leistung und geschützte Privatsphäre.",
+          missionText: "Meine Mission ist es, Apps zu entwickeln, die den Alltag der Nutzer ohne Komplexität bereichern – bei höchsten Standards für Qualität und Sicherheit.",
+          appsTitle: "Meine Anwendungen",
+          contactTitle: "Kontakt",
+          rights: "— Alle Rechte vorbehalten.",
+          emailText: "E-Mail:",
+          officialPage: "Offizielle Seite:"
       }
   };
 
@@ -736,13 +754,13 @@ footer {
       try {
           const params = new URLSearchParams(location.search);
           const p = params.get('lang');
-          if (p && (p === 'ar' || p === 'en')) return p;
+          if (p && (p === 'ar' || p === 'en' || p === 'de')) return p;
 
           // check hash like #lang=ar or #ar
           if (location.hash) {
               const h = location.hash.replace('#','');
-              if (h === 'ar' || h === 'en') return h;
-              const m = h.match(/lang=(ar|en)/);
+              if (h === 'ar' || h === 'en' || h === 'de') return h;
+              const m = h.match(/lang=(ar|en|de)/);
               if (m) return m[1];
           }
       } catch(e) {
@@ -810,29 +828,13 @@ footer {
       const activeBtn = document.getElementById('lang-' + lang);
       if (activeBtn) activeBtn.classList.add('active');
 
-      // عنصر تصحيح بسيط يظهر اللغة الحالية (لتجربة داخل WebViewer)
-      const dbg = document.getElementById('lang-debug');
-      if (dbg) dbg.textContent = 'lang: ' + lang;
-      else {
-          const d = document.createElement('div');
-          d.id = 'lang-debug';
-          d.style.position = 'fixed';
-          d.style.right = '10px';
-          d.style.bottom = '10px';
-          d.style.zIndex = '99999';
-          d.style.background = 'rgba(255,255,255,0.9)';
-          d.style.padding = '6px 8px';
-          d.style.borderRadius = '6px';
-          d.style.fontSize = '12px';
-          d.style.boxShadow = '0 1px 6px rgba(0,0,0,0.1)';
-          d.textContent = 'lang: ' + lang;
-          document.body.appendChild(d);
-      }
+      // the app cards and the policy box are drawn from apps.json by assets/apps-render.js
+      if (window.renderApps) window.renderApps(lang);
   }
 
   // ====== الواجهة الخارجية: استدعاء من App Inventor لو أمكن ======
   window.setAppLang = function(lang) {
-      if (lang !== 'ar' && lang !== 'en') return;
+      if (lang !== 'ar' && lang !== 'en' && lang !== 'de') return;
       applyTranslations(lang);
       try { setLangInUrl(lang); } catch(e){}
       if (storageAvailable('localStorage')) {
@@ -845,7 +847,7 @@ footer {
       const urlLang = getLangFromUrlOrHash();
       const canStore = storageAvailable('localStorage');
       const saved = canStore ? (localStorage.getItem('language') || null) : null;
-      const initial = urlLang || saved || 'ar';
+      const initial = urlLang || (['ar', 'en', 'de'].indexOf(saved) >= 0 ? saved : null) || 'ar';
 
       // أول تطبيق
       applyTranslations(initial);
@@ -866,6 +868,12 @@ footer {
           setLangInUrl('en');
           if (storageAvailable('localStorage')) localStorage.setItem('language', 'en');
       });
+      var btnDe = document.getElementById('lang-de');
+      if (btnDe) btnDe.addEventListener('click', function(e) {
+          applyTranslations('de');
+          setLangInUrl('de');
+          if (storageAvailable('localStorage')) localStorage.setItem('language', 'de');
+      });
   });
 })();
 </script>
@@ -878,10 +886,11 @@ footer {
 <div class="language-switcher">
     <button id="lang-ar" class="lang-btn active">العربية</button>
     <button id="lang-en" class="lang-btn">English</button>
+    <button id="lang-de" class="lang-btn">Deutsch</button>
 </div>
 <div class="container">
   <div class="brand">
-    <div class="logo"><img src="your-logo.png" alt="شعاري" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></div>
+    <div class="logo"><img src="assets/logo.png" alt="SAMI-ROR-TECH" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></div>
     <div class="name">SAMI-ROR-TECH</div>
   </div>
   
@@ -914,171 +923,89 @@ footer {
 <section id="apps" class="fade-in">
 <h2 data-translate="appsTitle">تطبيقاتي</h2>
 <div class="apps-grid">
-
-<!-- التطبيق الأول -->
-<div class="app-card">
-  <img src="https://play-lh.googleusercontent.com/da8wOw-pzjV3PFR0lwfJ11Co55CPcePKP7orKOMFQN5D4JeL-xkRhKy5BzgiuKu_vxnh=w480-h960-rw" alt="سورة الفاتحة" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha" target="_blank" data-translate="alfatiha">سورة الفاتحة</a></h3>
-  <p data-translate="alfatihaDesc">تطبيق بسيط لتشغيل سورة الفاتحة بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.</p>
-  <p><strong data-translate="developer">المطور</strong>: SAMI-ROR-TECH</p>
-  <p><strong data-translate="updateDate">تاريخ التحديث</strong>: 25-08-2025</p>
-  <p><strong data-translate="ageRating">التصنيف العمري</strong>: PEGI 3</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha" target="_blank" data-translate="appsButton">اضغط هنا لتحميل</a>
+<!-- APPS:CARDS:START -->
+<div class="app-card" data-id="alfatiha">
+  <img src="assets/icons/alfatiha.png" alt="سورة الفاتحة" class="app-icon">
+  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha" target="_blank" rel="noopener">سورة الفاتحة</a></h3>
+  <p>تطبيق بسيط لتشغيل سورة الفاتحة بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.</p>
+  <p><strong>المطور</strong>: SAMI-ROR-TECH</p>
+  <p><strong>تاريخ التحديث</strong>: 25-08-2025</p>
+  <p><strong>التصنيف العمري</strong>: PEGI 3</p>
+  <p><strong>المنصة</strong>: Android</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<!-- التطبيق الثاني -->
-<div class="app-card">
-  <img src="https://play-lh.googleusercontent.com/c9Fw2l5oI4FqrjJnkTVb9GLc3dXs26y0yf7cc5QnbJbmwm8ecx581zypRQjAtm47Kn67QB3L2g4wO7H-SPMcMq0=w480-h960-rw" alt="سورة الإخلاص" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas" target="_blank" data-translate="alikhlas">سورة الإخلاص</a></h3>
-  <p data-translate="alikhlasDesc">تطبيق لتشغيل سورة الإخلاص بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.</p>
-  <p><strong data-translate="developer">المطور</strong>: SAMI-ROR-TECH</p>
-  <p><strong data-translate="updateDate">تاريخ التحديث</strong>: 25-08-2025</p>
-  <p><strong data-translate="ageRating">التصنيف العمري</strong>: PEGI 3</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas" target="_blank" data-translate="appsButton">اضغط هنا لتحميل</a>
+<div class="app-card" data-id="alikhlas">
+  <img src="assets/icons/alikhlas.png" alt="سورة الإخلاص" class="app-icon">
+  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas" target="_blank" rel="noopener">سورة الإخلاص</a></h3>
+  <p>تطبيق لتشغيل سورة الإخلاص بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.</p>
+  <p><strong>المطور</strong>: SAMI-ROR-TECH</p>
+  <p><strong>تاريخ التحديث</strong>: 25-08-2025</p>
+  <p><strong>التصنيف العمري</strong>: PEGI 3</p>
+  <p><strong>المنصة</strong>: Android</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<!-- التطبيق الثالث -->
-<div class="app-card">
-  <img src="https://play-lh.googleusercontent.com/pfUX8ax6wQLVssBPtoXMEveZEnZRtsmiZ2mCLjnc_o7qmeU9_DccoFU4D5J6BS5xdDg=w480-h960-rw" alt="My YouTube Channel" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel" target="_blank" data-translate="youtube">My YouTube Channel</a></h3>
-  <p data-translate="youtubeDesc">تطبيق لعرض قناتي على يوتيوب وتسهيل الوصول إليها دون الحاجة للبحث.</p>
-  <p><strong data-translate="developer">المطور</strong>: SAMI-ROR-TECH</p>
-  <p><strong data-translate="updateDate">تاريخ التحديث</strong>: 25-08-2025</p>
-  <p><strong data-translate="ageRating">التصنيف العمري</strong>: PEGI 3</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel" target="_blank" data-translate="appsButton">اضغط هنا لتحميل</a>
+<div class="app-card" data-id="my_youtube_channel">
+  <img src="assets/icons/my_youtube_channel.png" alt="My YouTube Channel" class="app-icon">
+  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel" target="_blank" rel="noopener">My YouTube Channel</a></h3>
+  <p>تطبيق لعرض قناتي على يوتيوب وتسهيل الوصول إليها دون الحاجة للبحث.</p>
+  <p><strong>المطور</strong>: SAMI-ROR-TECH</p>
+  <p><strong>تاريخ التحديث</strong>: 25-08-2025</p>
+  <p><strong>التصنيف العمري</strong>: PEGI 3</p>
+  <p><strong>المنصة</strong>: Android</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<!-- التطبيق الرابع -->
-<div class="app-card">
-  <img src="https://play-lh.googleusercontent.com/we4FdgE6p2B9AHtMGJHroEhfnYuQ3qS8C9jM9hmb1ki9OshsLrCxxCGMt6tjEH8HcZb8wCpDiPuvLQR2gFg6HQ=w480-h960-rw" alt="تطبيق الكرسي" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi" target="_blank" data-translate="alkursi">تطبيق الكرسي</a></h3>
-  <p data-translate="alkursiDesc">تطبيق لعرض آية الكرسي بخط واضح مع إمكانية الاستماع والتكرار.</p>
-  <p><strong data-translate="developer">المطور</strong>: SAMI-ROR-TECH</p>
-  <p><strong data-translate="updateDate">تاريخ التحديث</strong>: 29-08-2025</p>
-  <p><strong data-translate="ageRating">التصنيف العمري</strong>: PEGI 3</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi" target="_blank" data-translate="appsButton">اضغط هنا لتحميل</a>
+<div class="app-card" data-id="al_kursi">
+  <img src="assets/icons/al_kursi.png" alt="تطبيق الكرسي" class="app-icon">
+  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi" target="_blank" rel="noopener">تطبيق الكرسي</a></h3>
+  <p>تطبيق لعرض آية الكرسي بخط واضح مع إمكانية الاستماع والتكرار.</p>
+  <p><strong>المطور</strong>: SAMI-ROR-TECH</p>
+  <p><strong>تاريخ التحديث</strong>: 29-08-2025</p>
+  <p><strong>التصنيف العمري</strong>: PEGI 3</p>
+  <p><strong>المنصة</strong>: Android</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<!-- التطبيق الخامس -->
-<div class="app-card">
-  <img src="https://play-lh.googleusercontent.com/EeJttLFSlca-QniUcbuINBsMw7Bh_OTrhiBzpulUe9B8sNcZSFDB9YzeUbBK-OU2JL6nE_L5XMEFeG6pPSWw=w480-h960-rw" alt="المعوذاتْ الثلاثَ" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist" target="_blank" data-translate="verses">المعوذاتْ الثلاثَ</a></h3>
-  <p data-translate="versesDesc">تطبيق يعرض آيات مختارة مع إمكانية الاستماع والتكرار.</p>
-  <p><strong data-translate="developer">المطور</strong>: SAMI-ROR-TECH</p>
-  <p><strong data-translate="updateDate">تاريخ التحديث</strong>: 25-08-2025</p>
-  <p><strong data-translate="ageRating">التصنيف العمري</strong>: PEGI 3</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist" target="_blank" data-translate="appsButton">اضغط هنا لتحميل</a>
+<div class="app-card" data-id="verses">
+  <img src="assets/icons/verses.png" alt="المعوذاتْ الثلاثَ" class="app-icon">
+  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist" target="_blank" rel="noopener">المعوذاتْ الثلاثَ</a></h3>
+  <p>تطبيق يعرض آيات مختارة مع إمكانية الاستماع والتكرار.</p>
+  <p><strong>المطور</strong>: SAMI-ROR-TECH</p>
+  <p><strong>تاريخ التحديث</strong>: 25-08-2025</p>
+  <p><strong>التصنيف العمري</strong>: PEGI 3</p>
+  <p><strong>المنصة</strong>: Android</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<!-- التطبيق السادس -->
-<div class="app-card">
-  <img src="https://play-lh.googleusercontent.com/nfU-ez2uaJXJ34mRIsdSkbar6QmYtWrmVsaTyVVMDTSNQRutuAm7QKD6qywPQqF-kKH6=w480-h960-rw" alt="Video Player" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer" target="_blank" data-translate="video">Video Player</a></h3>
-  <p data-translate="videoDesc">تطبيق مشغل فيديو قوي يتيح لك الاستمتاع بمقاطع الفيديو المفضلة لديك على جهاز الأندرويد.</p>
-  <p><strong data-translate="developer">المطور</strong>: SAMI-ROR-TECH</p>
-  <p><strong data-translate="updateDate">تاريخ التحديث</strong>: 25-08-2025</p>
-  <p><strong data-translate="ageRating">التصنيف العمري</strong>: PEGI 3</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer" target="_blank" data-translate="appsButton">اضغط هنا لتحميل</a>
+<div class="app-card" data-id="video_player">
+  <img src="assets/icons/video_player.png" alt="Video Player" class="app-icon">
+  <h3><a href="https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer" target="_blank" rel="noopener">Video Player</a></h3>
+  <p>تطبيق مشغل فيديو قوي يتيح لك الاستمتاع بمقاطع الفيديو المفضلة لديك على جهاز الأندرويد.</p>
+  <p><strong>المطور</strong>: SAMI-ROR-TECH</p>
+  <p><strong>تاريخ التحديث</strong>: 25-08-2025</p>
+  <p><strong>التصنيف العمري</strong>: PEGI 3</p>
+  <p><strong>المنصة</strong>: Android</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer" target="_blank" rel="noopener">Google Play</a>
 </div>
-
+<!-- APPS:CARDS:END -->
 </div>
 </section>
 
- <!-- في قسم سياسة الخصوصية -->
-<section id="privacy-policy" class="card">
-  <h2 data-translate="privacyTitle">سياسة الخصوصية</h2>
-  <p data-translate="privacyText">توضح هذه السياسة كيفية جمعنا واستخدامنا ومشاركتنا للمعلومات عند استخدامك لتطبيقاتنا على نظام أندرويد. تنطبق هذه السياسة على جميع تطبيقاتنا المدرجة في هذا الموقع (ويشار إليها مجتمعةً بـ "التطبيقات").</p>
-
-  <h3 data-translate="privacySummary">الملخّص السريع</h3>
-  <ul class="list">
-    <li data-translate="privacyPoint1">نلتزم بمتطلبات <a href="https://play.google.com/about/privacy-security-deception/" target="_blank" rel="noopener">سياسة مطوّري Google Play</a>.</li>
-    <li data-translate="privacyPoint2">لا نجمع بيانات شخصية إلا عند الحاجة لتشغيل الميزات الأساسية، وبموافقتك حيثما لزم.</li>
-    <li data-translate="privacyPoint3">يمكنك طلب حذف بياناتك أو سحب الموافقة عبر وسائل التواصل أدناه.</li>
-  </ul>
-
-  <div class="hr"></div>
-
-  <details>
-    <summary data-translate="infoCollection">1) معلومات نَجمعها</summary>
-    <ul class="list">
-      <li data-translate="usageData"><strong>بيانات الاستخدام والأعطال</strong>: قد نجمع بيانات تشخيصية وأعطال لتحسين الأداء.</li>
-      <li data-translate="providedInfo"><strong>المعلومات التي تزودنا بها</strong>: مثل البريد الإلكتروني عند التواصل معنا من داخل التطبيق.</li>
-      <li data-translate="permissions"><strong>أذونات النظام</strong>: قد يطلب التطبيق أذونات مثل <em>الكاميرا/التخزين/الموقع</em> بحسب الوظيفة. يُطلب الإذن داخل النظام ويمكنك رفضه.</li>
-    </ul>
-  </details>
-
-  <details>
-    <summary data-translate="infoUsage">2) كيف نستخدم المعلومات</summary>
-    <ul class="list">
-      <li data-translate="usagePoint1">تشغيل الميزات الأساسية للتطبيق.</li>
-      <li data-translate="usagePoint2">تحسين الأداء وتجربة الاستخدام.</li>
-      <li data-translate="usagePoint3">الامتثال للمتطلبات القانونية.</li>
-    </ul>
-  </details>
-
-  <details>
-    <summary data-translate="infoSharing">3) مشاركة المعلومات</summary>
-    <p data-translate="sharingText">لا نبيع بياناتك. قد نشارك بيانات محدودة مع مزوّدي خدمات لمعالجة الأعطال أو التحليلات بما يتوافق مع هذه السياسة واتفاقيات المعالجة.</p>
-  </details>
-
-  <details>
-    <summary data-translate="thirdParties">4) الأطراف الخارجية وSDKs</summary>
-    <p data-translate="thirdPartiesText">قد تستخدم بعض التطبيقات حِزم تطوير برمجيات (SDKs) تابعة لطرف ثالث. راجع سياسات الخصوصية ذات الصلة:</p>
-    <ul class="list">
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" data-translate="googleServices">خدمات Google</a> (Firebase/Crashlytics/Analytics)</li>
-        <li><a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener" data-translate="metaUsed">Meta (إذا استُخدمت)</a></li>
-        <li><a href="https://privacy.microsoft.com" target="_blank" rel="noopener" data-translate="microsoftUsed">Microsoft App Center (إذا استُخدم)</a></li>
-    </ul>
-    <p class="muted" data-translate="deleteElements">احذف أي عناصر لا تنطبق على تطبيقاتك.</p>
-   </details>
-
-  <details>
-    <summary data-translate="legalBasis">5) الأساس القانوني (عند الاقتضاء)</summary>
-    <p data-translate="legalBasisText">إذا كنت في المنطقة الاقتصادية الأوروبية/المملكة المتحدة: نعتمد على أساس قانوني مثل التنفيذ العقدي، المصلحة المشروعة، أو الموافقة (عند اللزوم).</p>
-  </details>
-
-  <details>
-    <summary data-translate="dataRetention">6) الاحتفاظ بالبيانات</summary>
-    <p data-translate="retentionText">نحتفظ بالبيانات للمدة اللازمة لتحقيق الأغراض المذكورة، ثم نقوم بحذفها أو إخفاء هوّيتها.</p>
-  </details>
-
-  <details>
-    <summary data-translate="yourRights">7) حقوقك</summary>
-    <ul class="list">
-      <li data-translate="right1">الوصول إلى بياناتك أو تصحيحها أو حذفها.</li>
-      <li data-translate="right2">سحب الموافقة عندما يكون المعالجة مبنية عليها.</li>
-      <li data-translate="right3">الاعتراض على المعالجة أو طلب التقييد (حيثما كان ذلك متاحًا قانونًا).</li>
-    </ul>
-  </details>
-
-  <details>
-    <summary data-translate="childrenPrivacy">8) خصوصية الأطفال</summary>
-    <p data-translate="childrenText">لا تستهدف تطبيقاتنا الأطفال دون <strong>سن 13 عامًا</strong> (أو السن المكافئ محليًا). إذا اعتقدت أننا جمعنا بيانات من طفل، فالرجاء التواصل لحذفها.</p>
-  </details>
-
-  <details>
-    <summary data-translate="policyChanges">9) التغييرات على هذه السياسة</summary>
-    <p data-translate="changesText">قد نحدّث هذه السياسة دوريًا. سننشر أي تغييرات مع تحديث تاريخ 'آخر تحديث' أعلاه.</p>
-  </details>
-
-  <details>
-    <summary data-translate="contactPrivacy">10) التواصل</summary>
-    <p data-translate="contactText">للاستفسارات أو طلبات الوصول/الحذف، تواصل عبر البريد:
-      <a href="sami00880@gmail.com">sami00880@gmail.com</a>
-    </p>
-  </details>
-
-  <div style="display:flex; gap:10px; margin-top:14px; flex-wrap: wrap;">
-    <button class="btn" onclick="window.print()" data-translate="printBtn">🖨️ طباعة/حفظ PDF</button>
-    <a class="btn" href="#privacy-policy" title="رابط مباشر لسياسة الخصوصية" data-translate="directLink">🔗 رابط سياسة الخصوصية</a>
-  </div>
+<!-- POLICY:START -->
+<section id="privacy-policy" class="card fade-in">
+  <h2>سياسة الخصوصية</h2>
+  <p class="policy-text">تطبيقاتي مجانية وبلا إعلانات ولا حسابات، ولا أجمع أي بيانات شخصية. التفاصيل الكاملة في صفحة سياسة الخصوصية.</p>
+  <a class="btn policy-link" href="privacy.html">اقرأ سياسة الخصوصية</a>
 </section>
+<!-- POLICY:END -->
 
 <section id="contact" class="card fade-in">
   <h2 data-translate="contactTitle">التواصل</h2>
   <ul class="list">
     <li><span data-translate="emailText">البريد الالكتروني:</span> <a href="mailto:sami00880@gmail.com">sami00880@gmail.com</a></li>
-    <li><span data-translate="officialPage">الصفحة الرسمية:</span> <a href="https://play.google.com/store/apps/dev?id=5869876849822493247" target="_blank" rel="noopener">Google Play</a></li>
+    <li><span data-translate="officialPage">الصفحة الرسمية:</span> <a href="https://play.google.com/store/apps/dev?id=5869876849822493247" target="_blank" rel="noopener">Google Play</a> · <a href="https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&amp;hl=ar-SA&amp;gl=DE" target="_blank" rel="noopener">Microsoft Store</a></li>
   </ul>
 </section>
 
@@ -1095,6 +1022,10 @@ window.addEventListener('load', function(){
   document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
 });
 </script>
+<!-- APPS:DATA:START -->
+<script type="application/json" id="apps-data">{"developer": "SAMI-ROR-TECH", "labels": {"ar": {"developer": "المطور", "updated": "تاريخ التحديث", "age": "التصنيف العمري", "platform": "المنصة", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "الموقع"}, "en": {"developer": "Developer", "updated": "Last update", "age": "Age rating", "platform": "Platform", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "Website"}, "de": {"developer": "Entwickler", "updated": "Letztes Update", "age": "Altersfreigabe", "platform": "Plattform", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "Webseite"}}, "policy": {"url": "privacy.html", "title": {"ar": "سياسة الخصوصية", "en": "Privacy Policy", "de": "Datenschutzerklärung"}, "text": {"ar": "تطبيقاتي مجانية وبلا إعلانات ولا حسابات، ولا أجمع أي بيانات شخصية. التفاصيل الكاملة في صفحة سياسة الخصوصية.", "en": "My apps are free, ad-free and have no accounts, and I do not collect any personal data. The full details are on the privacy policy page.", "de": "Meine Apps sind kostenlos, werbefrei und ohne Konto, und ich erhebe keine personenbezogenen Daten. Alle Details stehen auf der Seite der Datenschutzerklärung."}, "button": {"ar": "اقرأ سياسة الخصوصية", "en": "Read the privacy policy", "de": "Datenschutzerklärung lesen"}}, "apps": [{"id": "alfatiha", "hidden": false, "icon": "assets/icons/alfatiha.png", "name": {"ar": "سورة الفاتحة", "en": "Surah Al-Fatiha", "de": "Sure Al-Fatiha"}, "desc": {"ar": "تطبيق بسيط لتشغيل سورة الفاتحة بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.", "en": "A simple app to play Surah Al-Fatiha without ads, with play/stop sound capability.", "de": "Eine einfache App zum Abspielen der Sure Al-Fatiha ohne Werbung, mit Start-/Stopp-Funktion für den Ton."}, "updated": "25-08-2025", "age": "PEGI 3", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha", "microsoft": "", "amazon": "", "website": ""}}, {"id": "alikhlas", "hidden": false, "icon": "assets/icons/alikhlas.png", "name": {"ar": "سورة الإخلاص", "en": "Surah Al-Ikhlas", "de": "Sure Al-Ikhlas"}, "desc": {"ar": "تطبيق لتشغيل سورة الإخلاص بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.", "en": "An app to play Surah Al-Ikhlas without ads, with play/stop sound capability.", "de": "Eine App zum Abspielen der Sure Al-Ikhlas ohne Werbung, mit Start-/Stopp-Funktion für den Ton."}, "updated": "25-08-2025", "age": "PEGI 3", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas", "microsoft": "", "amazon": "", "website": ""}}, {"id": "my_youtube_channel", "hidden": false, "icon": "assets/icons/my_youtube_channel.png", "name": {"ar": "My YouTube Channel", "en": "My YouTube Channel", "de": "My YouTube Channel"}, "desc": {"ar": "تطبيق لعرض قناتي على يوتيوب وتسهيل الوصول إليها دون الحاجة للبحث.", "en": "An app to display my YouTube channel and facilitate access without searching.", "de": "Eine App, die meinen YouTube-Kanal anzeigt und den Zugang ohne Suchen erleichtert."}, "updated": "25-08-2025", "age": "PEGI 3", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel", "microsoft": "", "amazon": "", "website": ""}}, {"id": "al_kursi", "hidden": false, "icon": "assets/icons/al_kursi.png", "name": {"ar": "تطبيق الكرسي", "en": "Al-Kursi App", "de": "Al-Kursi-App"}, "desc": {"ar": "تطبيق لعرض آية الكرسي بخط واضح مع إمكانية الاستماع والتكرار.", "en": "An app to display Ayat Al-Kursi with clear font and listening/repeating capability.", "de": "Eine App, die den Thronvers (Ayat Al-Kursi) in klarer Schrift anzeigt, mit Hör- und Wiederholfunktion."}, "updated": "29-08-2025", "age": "PEGI 3", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi", "microsoft": "", "amazon": "", "website": ""}}, {"id": "verses", "hidden": false, "icon": "assets/icons/verses.png", "name": {"ar": "المعوذاتْ الثلاثَ", "en": "The Three Al-Mu'awwidhat", "de": "Die drei Schutzsuren"}, "desc": {"ar": "تطبيق يعرض آيات مختارة مع إمكانية الاستماع والتكرار.", "en": "An app that displays selected verses with listening and repeating capability.", "de": "Eine App, die ausgewählte Verse anzeigt, mit Hör- und Wiederholfunktion."}, "updated": "25-08-2025", "age": "PEGI 3", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist", "microsoft": "", "amazon": "", "website": ""}}, {"id": "video_player", "hidden": false, "icon": "assets/icons/video_player.png", "name": {"ar": "Video Player", "en": "Video Player", "de": "Video Player"}, "desc": {"ar": "تطبيق مشغل فيديو قوي يتيح لك الاستمتاع بمقاطع الفيديو المفضلة لديك على جهاز الأندرويد.", "en": "A powerful video player app that lets you enjoy your favorite videos on your Android device.", "de": "Ein leistungsstarker Videoplayer, mit dem Sie Ihre Lieblingsvideos auf Ihrem Android-Gerät genießen können."}, "updated": "25-08-2025", "age": "PEGI 3", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer", "microsoft": "", "amazon": "", "website": ""}}]}</script>
+<!-- APPS:DATA:END -->
+<script src="assets/apps-render.js"></script>
 </body>
 
 </html>
