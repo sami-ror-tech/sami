@@ -300,6 +300,31 @@
         "amazon": "",
         "website": ""
       }
+    },
+    {
+      "id": "app_6",
+      "hidden": false,
+      "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight",
+      "icon": "assets/icons/app_6.png",
+      "name": {
+        "ar": "Flash Light المصباح",
+        "en": "Flash Light المصباح",
+        "de": "Blitzlicht"
+      },
+      "desc": {
+        "ar": "المصباح برنامج تشغيل الاضائة LED",
+        "en": "LED lighting driver program",
+        "de": "Treibersoftware für LED-Beleuchtung"
+      },
+      "updated": "01-10-2026",
+      "age": "USK: All ages",
+      "platform": "",
+      "links": {
+        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight",
+        "microsoft": "",
+        "amazon": "",
+        "website": ""
+      }
     }
   ],
   "stores": [
