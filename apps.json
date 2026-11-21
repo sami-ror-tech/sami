@@ -275,6 +275,31 @@
         "amazon": "",
         "website": ""
       }
+    },
+    {
+      "id": "app_5",
+      "hidden": false,
+      "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh",
+      "icon": "assets/icons/app_5.png",
+      "name": {
+        "ar": "سورة الشرح",
+        "en": "سورة الشرح",
+        "de": "سورة الشرح"
+      },
+      "desc": {
+        "ar": "سورة الشرح : تلاوة مؤثرة، قراءة واضحة، وتفسير شامل.بالإضافة الى الأدعية",
+        "en": "Surah Ash-Sharh: A moving recitation, clear reading, and comprehensive interpretation, in addition to supplications.",
+        "de": "Sure Asch-Schar: Eine bewegende Rezitation, klare Lesung und umfassende Interpretation, zusätzlich zu Bittgebeten."
+      },
+      "updated": "30-09-2026",
+      "age": "USK: All ages",
+      "platform": "",
+      "links": {
+        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh",
+        "microsoft": "",
+        "amazon": "",
+        "website": ""
+      }
     }
   ],
   "stores": [
