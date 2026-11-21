@@ -44,7 +44,7 @@
       },
       "updated": "30-09-2026",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
         "microsoft": "",
@@ -200,7 +200,7 @@
       },
       "updated": "03-10-2026",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds",
         "microsoft": "",
@@ -226,7 +226,7 @@
       },
       "updated": "02-10-2026",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur",
         "microsoft": "",
@@ -252,7 +252,7 @@
       },
       "updated": "30-09-2026",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh",
         "microsoft": "",
@@ -278,7 +278,7 @@
       },
       "updated": "01-10-2026",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight",
         "microsoft": "",
@@ -304,7 +304,7 @@
       },
       "updated": "29-09-2024",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ",
         "microsoft": "",
@@ -330,7 +330,7 @@
       },
       "updated": "25-08-2025",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv",
         "microsoft": "",
@@ -356,7 +356,7 @@
       },
       "updated": "01-11-2026",
       "age": "USK: All ages",
-      "platform": "",
+      "platform": "Android, Windows, Amazon",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=com.samiror.lamha",
         "microsoft": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE",
@@ -366,7 +366,7 @@
     },
     {
       "id": "keyvault",
-      "hidden": false,
+      "hidden": true,
       "source": "",
       "privacy": "https://sami-ror-tech01.blogspot.com/2026/11/keyvault.html",
       "icon": "assets/icons/keyvault.png",
@@ -382,7 +382,7 @@
       },
       "updated": "",
       "age": "",
-      "platform": "Windows",
+      "platform": "Android, Windows",
       "links": {
         "google_play": "",
         "microsoft": "",
