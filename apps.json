@@ -222,7 +222,7 @@
   "stores": [
     {
       "id": "android",
-      "icon": "🤖",
+      "icon": "assets/stores/android.svg",
       "url": "https://play.google.com/store/apps/dev?id=5869876849822493247",
       "title": {
         "ar": "تطبيقات أندرويد",
@@ -237,7 +237,7 @@
     },
     {
       "id": "windows",
-      "icon": "🖥️",
+      "icon": "assets/stores/windows.svg",
       "url": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE",
       "title": {
         "ar": "تطبيقات ويندوز",
@@ -252,7 +252,7 @@
     },
     {
       "id": "amazon",
-      "icon": "📦",
+      "icon": "assets/stores/amazon.svg",
       "url": "https://www.amazon.com/gp/product/B0HPBGNXC9",
       "title": {
         "ar": "تطبيقات أمازون",

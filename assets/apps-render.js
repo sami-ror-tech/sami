@@ -67,7 +67,10 @@
 
   function tile(x, lang, lab) {
     var t = node('a', { 'class': 'store-tile', 'data-kind': x.id, href: safeUrl(x.url), target: '_blank', rel: 'noopener' });
-    t.appendChild(node('span', { 'class': 'store-icon' }, x.icon || ''));
+    var ic = node('span', { 'class': 'store-icon' });
+    if ((x.icon || '').indexOf('assets/') === 0) { ic.appendChild(node('img', { src: x.icon, alt: '', width: '56', height: '56' })); }
+    else { ic.textContent = x.icon || ''; }
+    t.appendChild(ic);
     t.appendChild(node('span', { 'class': 'store-title' }, pick(x.title, lang)));
     t.appendChild(node('span', { 'class': 'store-text' }, pick(x.text, lang)));
     t.appendChild(node('span', { 'class': 'store-open' }, lab.open_store || ''));
