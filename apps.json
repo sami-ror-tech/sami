@@ -176,7 +176,7 @@
       "icon": "",
       "name": {
         "ar": "لمحة",
-        "en": "Lamha",
+        "en": "Lamha Smart Info Screen",
         "de": ""
       },
       "desc": {
@@ -190,7 +190,7 @@
       "links": {
         "google_play": "",
         "microsoft": "",
-        "amazon": "",
+        "amazon": "https://www.amazon.com/gp/product/B0HPBGNXC9",
         "website": ""
       }
     },
@@ -253,7 +253,7 @@
     {
       "id": "amazon",
       "icon": "📦",
-      "url": "",
+      "url": "https://www.amazon.com/gp/product/B0HPBGNXC9",
       "title": {
         "ar": "تطبيقات أمازون",
         "en": "Amazon apps",
