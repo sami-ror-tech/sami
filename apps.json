@@ -30,6 +30,7 @@
       "id": "app_2",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
+      "privacy": "",
       "icon": "assets/icons/app_2.png",
       "name": {
         "ar": "سورة الفاتحة",
@@ -55,6 +56,7 @@
       "id": "alikhlas",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas",
+      "privacy": "",
       "icon": "assets/icons/alikhlas.png",
       "name": {
         "ar": "سورة الإخلاص",
@@ -80,6 +82,7 @@
       "id": "my_youtube_channel",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel",
+      "privacy": "",
       "icon": "assets/icons/my_youtube_channel.png",
       "name": {
         "ar": "My channel",
@@ -105,6 +108,7 @@
       "id": "al_kursi",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi",
+      "privacy": "",
       "icon": "assets/icons/al_kursi.png",
       "name": {
         "ar": "آية الكرسي",
@@ -130,6 +134,7 @@
       "id": "verses",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist",
+      "privacy": "",
       "icon": "assets/icons/verses.png",
       "name": {
         "ar": "المعوذات الثلاث",
@@ -155,6 +160,7 @@
       "id": "video_player",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer",
+      "privacy": "",
       "icon": "assets/icons/video_player.png",
       "name": {
         "ar": "video Player - مشغل الفيديو",
@@ -180,6 +186,7 @@
       "id": "app_3",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds",
+      "privacy": "",
       "icon": "assets/icons/app_3.png",
       "name": {
         "ar": "أصوات الحيوانات",
@@ -205,6 +212,7 @@
       "id": "app_4",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur",
+      "privacy": "",
       "icon": "assets/icons/app_4.png",
       "name": {
         "ar": "التكاثر",
@@ -230,6 +238,7 @@
       "id": "app_5",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh",
+      "privacy": "",
       "icon": "assets/icons/app_5.png",
       "name": {
         "ar": "سورة الشرح",
@@ -255,6 +264,7 @@
       "id": "app_6",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight",
+      "privacy": "",
       "icon": "assets/icons/app_6.png",
       "name": {
         "ar": "Flash Light المصباح",
@@ -280,6 +290,7 @@
       "id": "app_7",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ",
+      "privacy": "",
       "icon": "assets/icons/app_7.png",
       "name": {
         "ar": "Mobile test hardware",
@@ -305,6 +316,7 @@
       "id": "app_8",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv",
+      "privacy": "",
       "icon": "assets/icons/app_8.png",
       "name": {
         "ar": "معلومات البطارية",
@@ -330,6 +342,7 @@
       "id": "app",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=com.samiror.lamha",
+      "privacy": "",
       "icon": "assets/icons/app.png",
       "name": {
         "ar": "لمحة Lamha – شاشة معلومات",
@@ -355,6 +368,7 @@
       "id": "keyvault",
       "hidden": false,
       "source": "",
+      "privacy": "https://sami-ror-tech01.blogspot.com/2026/11/keyvault.html",
       "icon": "assets/icons/keyvault.png",
       "name": {
         "ar": "KeyVault",

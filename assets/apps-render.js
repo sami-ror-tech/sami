@@ -63,6 +63,8 @@
     links.forEach(function (l) {
       c.appendChild(node('a', { 'class': 'btn', href: l[1], target: '_blank', rel: 'noopener' }, lab[l[0]] || l[0]));
     });
+    var pv = safeUrl(app.privacy);
+    if (pv) c.appendChild(node('a', { 'class': 'priv-link', href: pv, target: '_blank', rel: 'noopener' }, lab.privacy || 'Privacy policy'));
     return c;
   }
 
