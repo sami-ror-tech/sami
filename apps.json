@@ -55,14 +55,14 @@
       "hidden": false,
       "icon": "assets/icons/my_youtube_channel.png",
       "name": {
-        "ar": "My YouTube Channel",
-        "en": "My YouTube Channel",
-        "de": "My YouTube Channel"
+        "ar": "My channel",
+        "en": "My channel",
+        "de": "My channel"
       },
       "desc": {
-        "ar": "تطبيق لعرض قناتي على يوتيوب وتسهيل الوصول إليها دون الحاجة للبحث.",
-        "en": "An app to display my YouTube channel and facilitate access without searching.",
-        "de": "Eine App, die meinen YouTube-Kanal anzeigt und den Zugang ohne Suchen erleichtert."
+        "ar": "برنامج لعرض قناتي على منصة اليوتيوب",
+        "en": "A program to display my channel on YouTube",
+        "de": "Ein Programm zur Anzeige meines Kanals auf YouTube"
       },
       "updated": "25-08-2025",
       "age": "PEGI 3",
