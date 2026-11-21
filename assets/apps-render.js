@@ -46,7 +46,7 @@
     STORES.forEach(function (k) { var u = safeUrl((app.links || {})[k]); if (u) links.push([k, u]); });
     var c = node('div', { 'class': 'app-card', 'data-id': app.id });
     var icon = safeUrl(app.icon);
-    if (icon) c.appendChild(node('img', { src: icon, alt: name, 'class': 'app-icon' }));
+    if (icon) c.appendChild(node('img', { src: icon, alt: name, 'class': 'app-icon', width: '84', height: '84', loading: 'lazy', decoding: 'async' }));
     var h = node('h3');
     if (links.length) {
       h.appendChild(node('a', { href: links[0][1], target: '_blank', rel: 'noopener' }, name));

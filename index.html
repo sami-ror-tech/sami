@@ -1,941 +1,361 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-	<meta name="google-site-verification" content="77wHg9aQd1mx9G68PttIn4tC46b7myksta4uj8Y8GZg" />
+<meta name="google-site-verification" content="77wHg9aQd1mx9G68PttIn4tC46b7myksta4uj8Y8GZg" />
 <meta charset="utf-8" />
 <link rel="icon" type="image/png" href="assets/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#02030a">
 <title>الصفحة الرسمية | عنّي + تطبيقاتي + سياسة الخصوصية</title>
 <meta name="description" content="صفحة هويّة تضم نبذة عن المطوّر، تطبيقاته وسياسة الخصوصية لتطبيقات أندرويد وويندوز وأمازون." />
 <meta name="robots" content="index,follow" />
-<style>
-:root {
-  --primary: #2D5B7A;
-  --secondary: #4F91C5;
-  --accent: #FF9F43;
-  --light: #F8F9FA;
-  --dark: #343A40;
-  --success: #28A745;
-  --danger: #DC3545;
-  --warning: #FFC107;
-  --info: #17A2B8;
-  --gray: #6C757D;
-  --gray-light: #CED4DA;
-  --border-radius: 8px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--dark);
-  background-color: #f5f7f9;
-  direction: inherit; /* follows <html dir>, set by the language switch */
-  text-align: start;
-  overflow-x: hidden;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.hr {
-  height: 2px;
-  background: linear-gradient(to left, var(--primary), var(--secondary));
-  margin: 20px 0;
-  border: none;
-  border-radius: 2px;
-}
-
-/* الهيدر */
-header {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: white;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo {
-  width: 40px;
-  height: 40px;
-  transition: var(--transition);
-  background: white;
-  padding: 5px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: rotate 8s linear infinite, pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 15px rgba(45, 91, 122, 0.5);
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-.name {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.links {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.links a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.links a:hover, .links a.active {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* الأقسام الرئيسية */
-section {
-  padding: 40px 0;
-  scroll-margin-top: 80px;
-}
-
-section:before {
-  content: "";
-  display: block;
-  height: 80px;
-  margin-top: -40px;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.card {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 30px;
-  box-shadow: var(--box-shadow);
-  margin-bottom: 30px;
-}
-
-/* قسم عني */
-#about h1 {
-  color: var(--primary);
-  margin-bottom: 15px;
-  font-size: 2.2rem;
-}
-
-.muted {
-  color: var(--gray);
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-#about .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-/* قسم التطبيقات */
-#apps h2 {
-  color: var(--primary);
-  margin-bottom: 30px;
-  text-align: center;
-  font-size: 2rem;
-}
-
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-.app-card {
-  background: white;
-  border-radius: var(--border-radius);
-  padding: 20px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-  border-top: 4px solid var(--primary);
-  display: flex;
-  flex-direction: column;
-}
-
-.app-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.app-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 16px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 1px solid var(--gray-light);
-  align-self: center;
-}
-
-.app-card h3 {
-  margin-bottom: 12px;
-  color: var(--primary);
-}
-
-.app-card h3 a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-.app-card h3 a:hover {
-  text-decoration: underline;
-}
-
-.app-card p {
-  margin-bottom: 8px;
-  color: var(--dark);
-  flex-grow: 1;
-}
-
-.btn {
-  display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 8px 15px;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.btn:hover {
-  background: var(--secondary);
-  transform: translateY(-2px);
-}
-
-/* قسم سياسة الخصوصية */
-#privacy-policy h2 {
-  color: var(--primary);
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-}
-
-#privacy-policy h3 {
-  color: var(--secondary);
-  margin: 20px 0 15px;
-  font-size: 1.4rem;
-}
-
-details {
-  margin-bottom: 15px;
-  border: 1px solid var(--gray-light);
-  border-radius: var(--border-radius);
-  padding: 15px;
-}
-
-summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--primary);
-  font-size: 1.1rem;
-}
-
-.list {
-  list-style-type: none;
-  padding: 15px 0 15px 20px;
-}
-
-.list li {
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.list li::before {
-  content: "•";
-  color: var(--accent);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-right: -1em;
-}
-
-.list a {
-  color: var(--secondary);
-  text-decoration: none;
-}
-
-.list a:hover {
-  text-decoration: underline;
-}
-
-/* قسم التواصل */
-#contact h2 {
-  color: var(--primary);
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-}
-
-#contact .list a {
-  color: var(--secondary);
-  text-decoration: none;
-}
-
-#contact .list a:hover {
-  text-decoration: underline;
-}
-
-/* الفوتر */
-footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-/* تأثيرات الحركة */
-@keyframes rotate {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1) rotateY(0deg);
-    box-shadow: 0 0 15px rgba(45, 91, 122, 0.5);
-  }
-  50% {
-    transform: scale(1.1) rotateY(180deg);
-    box-shadow: 0 0 25px rgba(45, 91, 122, 0.8);
-  }
-}
-
-.logo {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-/* تأثيرات الظهور */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  header .container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .brand {
-    justify-content: flex-start;
-    width: auto;
-  }
-  
-  .links {
-    display: none; /* إخفاء الروابط العادية */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    width: 100%;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* زر القائمة للموبايل */
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .links.active {
-    display: flex;
-  }
-  
-  .apps-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .card {
-    padding: 20px 15px;
-  }
-  
-  #about h1 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .name {
-    font-size: 1.2rem;
-  }
-  
-  .links a {
-    padding: 10px;
-    text-align: start;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .links a:last-child {
-    border-bottom: none;
-  }
-}
-/* زر القائمة للموبايل - إضافة هذا الكود */
-.menu-toggle {
-  display: none; /* مخفي بشكل افتراضي */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 5px 10px;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* إظهار الزر على الجوال */
-  }
-  
-  /* باقي التنسيقات كما هي */
-}
-@media (max-width: 768px) {
-  .links {
-    display: none; /* إخفاء الروابط بشكل افتراضي */
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    width: 100%;
-    padding: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .links.active {
-    display: flex; /* إظهار الروفق عند النشاط */
-  }
-}
-/* تنسيقات زر تبديل اللغة */
-.language-switcher {
-    display: flex;
-    margin-left: 20px;
-}
-
-.lang-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-.lang-btn.active {
-    background: rgba(255, 255, 255, 0.4);
-    font-weight: bold;
-}
-
-.lang-btn:first-child {
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-}
-
-.lang-btn:last-child {
-    border-top-left-radius: var(--border-radius);
-    border-bottom-left-radius: var(--border-radius);
-}
-
-/* على الجوال */
-@media (max-width: 768px) {
-    .language-switcher {
-        margin: 10px 0 0 0;
-        order: 3;
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-/* ===== store tiles + platform filter (added by SitePanel) ===== */
-.stores-title { color: var(--primary); margin-bottom: 4px; }
-.store-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 14px; }
-.store-tile { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 20px 16px;
-  border-radius: var(--border-radius); background: #fff; border: 1px solid #e6edf3; box-shadow: 0 2px 6px rgba(0,0,0,.06);
-  text-decoration: none; color: var(--dark); transition: transform .2s, box-shadow .2s; }
-.store-tile:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,.12); }
-.store-icon { font-size: 2.2rem; line-height: 1.2; display: block; height: 56px; }
-.store-icon img { width: 56px; height: 56px; display: block; margin: 0 auto; }
-.store-title { font-weight: 700; color: var(--primary); font-size: 1.15rem; }
-.store-text { color: var(--gray); font-size: .92rem; }
-.store-open { margin-top: 8px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: 6px 18px; border-radius: 999px; font-size: .9rem; }
-.apps-filter { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 10px 0 16px; }
-.chip { border: 1px solid var(--secondary); background: #fff; color: var(--primary); padding: 6px 16px; border-radius: 999px; cursor: pointer; font: inherit; }
-.chip.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-</style>
-
 <script>
-(function() {
-  // ====== تأثير التمرير ======
-  window.addEventListener('scroll', function() {
-      const logo = document.querySelector('header .logo');
-      const logoImg = document.querySelector('header .logo img');
-      if (!logo || !logoImg) return;
-      
-      if(window.scrollY > 50){
-          logoImg.style.width = '30px';
-          logoImg.style.height = '30px';
-          logo.style.animation = 'rotate 4s linear infinite, pulse 1s ease-in-out infinite';
-      } else {
-          logoImg.style.width = '40px';
-          logoImg.style.height = '40px';
-          logo.style.animation = 'rotate 8s linear infinite, pulse 2s ease-in-out infinite';
-      }
-  });
-
-  // ====== تحكم بقائمة الجوال ======
-  document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const links = document.querySelector('.links');
-      
-      if (menuToggle && links) {
-          menuToggle.addEventListener('click', function() {
-              links.classList.toggle('active');
-          });
-      }
-
-      // إغلاق القائمة عند النقر على رابط
-      document.querySelectorAll('.links a').forEach(link => {
-          link.addEventListener('click', function() {
-              if (links && links.classList.contains('active')) {
-                  links.classList.remove('active');
-              }
-          });
-      });
-  });
-
-  // ====== تحديث السنة وتأثيرات الظهور ======
-  window.addEventListener('load', function(){
-      const d = new Date();
-      const yearElement = document.getElementById('year');
-      if (yearElement) {
-          yearElement.textContent = d.getFullYear();
-      }
-      
-      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
-  });
-
-  // ====== فحص دعم التخزين ======
-  function storageAvailable(type) {
-      try {
-          var storage = window[type],
-              x = '__storage_test__';
-          storage.setItem(x, x);
-          storage.removeItem(x);
-          return true;
-      }
-      catch(e) {
-          return false;
-      }
-  }
-
-  // ====== كائن الترجمات (أخذت من كودك الأصلي) ======
-  const translations = {
-      ar: {
-          about: "عنّي",
-          apps: "تطبيقاتي", 
-          privacy: "سياسة الخصوصية",
-          contact: "تواصل",
-          title: "الصفحة الرسمية | عنّي + تطبيقاتي + سياسة الخصوصية",
-          welcome: "مرحبًا، أنا",
-          name: "سامي",
-          role: "مطوّر تطبيقات لأندرويد وويندوز وأمازون، متخصص في بناء حلول رقمية تركز على البساطة والأداء والخصوصية.",
-          aboutTitle: "نبذة عني",
-          aboutText: "أهلاً بكم في عالمي الرقمي! أنا سامي، مطوّر شغوف بتحويل الأفكار إلى تطبيقات عملية. منذ بدايتي في مجال البرمجة، وأنا أؤمن بأن التطبيقات الجيدة هي تلك التي تحل مشاكل حقيقية بتجربة مستخدم استثنائية. كل تطبيق أطلقه هو نتاج بحث وتطوير دقيق لضمان أداء ممتاز وخصوصية محفوظة.",
-          missionText: "رسالتي هي تطوير تطبيقات تثري حياة المستخدمين اليومية دون تعقيد، مع الحفاظ على أعلى معايير الجودة والأمان.",
-          appsTitle: "تطبيقاتي",
-          appsButton: "اضغط هنا لتحميل",
-          developer: "المطور",
-          updateDate: "تاريخ التحديث",
-          ageRating: "التصنيف العمري",
-          privacyTitle: "سياسة الخصوصية",
-          privacyText: "توضح هذه السياسة كيفية جمعنا واستخدامنا ومشاركتنا للمعلومات عند استخدامك لتطبيقاتنا على نظام أندرويد. تنطبق هذه السياسة على جميع تطبيقاتنا المدرجة في هذا الموقع (ويشار إليها مجتمعةً بـ 'التطبيقات').",
-          contactTitle: "التواصل",
-          rights: "— جميع الحقوق محفوظة.",
-          alfatiha: "سورة الفاتحة",
-          alfatihaDesc: "تطبيق بسيط لتشغيل سورة الفاتحة بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.",
-          alikhlas: "سورة الإخلاص", 
-          alikhlasDesc: "تطبيق لتشغيل سورة الإخلاص بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.",
-          youtube: "My YouTube Channel",
-          youtubeDesc: "تطبيق لعرض قناتي على يوتيوب وتسهيل الوصول إليها دون الحاجة للبحث.",
-          alkursi: "تطبيق الكرسي",
-          alkursiDesc: "تطبيق لعرض آية الكرسي بخط واضح مع إمكانية الاستماع والتكرار.",
-          verses: "المعوذاتْ الثلاثَ",
-          versesDesc: "تطبيق يعرض آيات مختارة مع إمكانية الاستماع والتكرار.",
-          video: "Video Player",
-          videoDesc: "تطبيق مشغل فيديو قوي يتيح لك الاستمتاع بمقاطع الفيديو المفضلة لديك على جهاز الأندرويد.",
-          privacySummary: "الملخّص السريع",
-          privacyPoint1: "نلتزم بمتطلبات سياسة مطوّري Google Play",
-          privacyPoint2: "لا نجمع بيانات شخصية إلا عند الحاجة لتشغيل الميزات الأساسية، وبموافقتك حيثما لزم",
-          privacyPoint3: "يمكنك طلب حذف بياناتك أو سحب الموافقة عبر وسائل التواصل أدناه",
-          infoCollection: "معلومات نَجمعها",
-          usageData: "بيانات الاستخدام والأعطال: قد نجمع بيانات تشخيصية وأعطال لتحسين الأداء",
-          providedInfo: "المعلومات التي تزودنا بها: مثل البريد الإلكتروني عند التواصل معنا من داخل التطبيق",
-          permissions: "أذونات النظام: قد يطلب التطبيق أذونات مثل الكاميرا/التخزين/الموقع بحسب الوظيفة. يُطلب الإذن داخل النظام ويمكنك رفضه",
-          infoUsage: "كيف نستخدم المعلومات",
-          usagePoint1: "تشغيل الميزات الأساسية للتطبيق",
-          usagePoint2: "تحسين الأداء وتجربة الاستخدام",
-          usagePoint3: "الامتثال للمتطلبات القانونية",
-          infoSharing: "مشاركة المعلومات",
-          sharingText: "لا نبيع بياناتك. قد نشارك بيانات محدودة مع مزوّدي خدمات لمعالجة الأعطال أو التحليلات بما يتوافق مع هذه السياسة واتفاقيات المعالجة",
-          thirdParties: "الأطراف الخارجية وSDKs",
-          thirdPartiesText: "قد تستخدم بعض التطبيقات حِزم تطوير برمجيات (SDKs) تابعة لطرف ثالث. راجع سياسات الخصوصية ذات الصلة:",
-          legalBasis: "الأساس القانوني (عند الاقتضاء)",
-          legalBasisText: "إذا كنت في المنطقة الاقتصادية الأوروبية/المملكة المتحدة: نعتمد على أساس قانوني مثل التنفيذ العقدي، المصلحة المشروعة، أو الموافقة (عند اللزوم)",
-          dataRetention: "الاحتفاظ بالبيانات",
-          retentionText: "نحتفظ بالبيانات للمدة اللازمة لتحقيق الأغراض المذكورة، ثم نقوم بحذفها أو إخفاء هوّيتها",
-          yourRights: "حقوقك",
-          right1: "الوصول إلى بياناتك أو تصحيحها أو حذفها",
-          right2: "سحب الموافقة عندما يكون المعالجة مبنية عليها",
-          right3: "الاعتراض على المعالجة أو طلب التقييد (حيثما كان ذلك متاحًا قانونيًا)",
-          childrenPrivacy: "خصوصية الأطفال",
-          childrenText: "لا تستهدف تطبيقاتنا الأطفال دون سن 13 عامًا (أو السن المكافئ محليًا). إذا اعتقدت أننا جمعنا بيانات من طفل، فالرجاء التواصل لحذفها",
-          policyChanges: "التغييرات على هذه السياسة",
-          changesText: "قد نحدّث هذه السياسة دوريًا. سننشر أي تغييرات مع تحديث تاريخ 'آخر تحديث' أعلاه",
-          contactPrivacy: "التواصل",
-          contactText: "للاستفسارات أو طلبات الوصول/الحذف، تواصل عبر البريد:",
-          printBtn: "🖨️ طباعة/حفظ PDF",
-          directLink: "🔗 رابط سياسة الخصوصية",
-          deleteElements: "احذف أي عناصر لا تنطبق على تطبيقاتك",
-          emailText: "البريد الالكتروني:",
-          officialPage: "الصفحة الرسمية:",
-          googleServices: "خدمات Google",
-          metaUsed: "Meta (إذا استُخدمت)",
-          microsoftUsed: "Microsoft App Center (إذا استُخدم)"
-      },
-      en: {
-          about: "About Me",
-		  officialPage: "Official Page:",
-		  emailText: "Email:",
-          apps: "My Apps",
-          privacy: "Privacy Policy", 
-          contact: "Contact",
-          title: "Official Page | About Me + My Apps + Privacy Policy",
-          welcome: "Hello, I'm",
-          name: "Sami",
-          role: "Developer of apps for Android, Windows and Amazon, specialized in building digital solutions focused on simplicity, performance, and privacy.",
-          aboutTitle: "Brief Summary",
-          aboutText: "Welcome to my digital world! I'm Sami, a passionate developer who transforms ideas into practical applications. Since my beginning in programming, I've believed that good apps are those that solve real problems with exceptional user experience. Every app I launch is the product of careful research and development to ensure excellent performance and preserved privacy.",
-          missionText: "My mission is to develop applications that enrich users' daily lives without complexity, while maintaining the highest standards of quality and security.",
-          appsTitle: "My Applications",
-          appsButton: "Click here to download",
-          developer: "Developer",
-          updateDate: "Update Date", 
-          ageRating: "Age Rating",
-          privacyTitle: "Privacy Policy",
-          privacyText: "This policy explains how we collect, use, and share information when you use our applications on the Android system. This policy applies to all our applications listed on this site (collectively referred to as 'Applications').",
-          contactTitle: "Contact",
-          rights: "— All Rights Reserved.",
-          alfatiha: "Surah Al-Fatiha",
-          alfatihaDesc: "A simple app to play Surah Al-Fatiha without ads, with play/stop sound capability.",
-          alikhlas: "Surah Al-Ikhlas",
-          alikhlasDesc: "An app to play Surah Al-Ikhlas without ads, with play/stop sound capability.",
-          youtube: "My YouTube Channel",
-          youtubeDesc: "An app to display my YouTube channel and facilitate access without searching.",
-          alkursi: "Al-Kursi App", 
-          alkursiDesc: "An app to display Ayat Al-Kursi with clear font and listening/repeating capability.",
-          verses: "The Three Al-Mu'awwidhat",
-          versesDesc: "An app that displays selected verses with listening and repeating capability.",
-          video: "Video Player",
-          videoDesc: "A powerful video player app that lets you enjoy your favorite videos on your Android device.",
-          privacySummary: "Quick Summary",
-          privacyPoint1: "We comply with Google Play Developer Policy requirements",
-          privacyPoint2: "We only collect personal data when necessary for core features, with your consent where required",
-          privacyPoint3: "You can request deletion of your data or withdraw consent through the contact methods below",
-          infoCollection: "Information We Collect",
-          usageData: "Usage and Crash Data: We may collect diagnostic data and crashes to improve performance",
-          providedInfo: "Information You Provide Us: Such as email when contacting us from within the app",
-          permissions: "System Permissions: The app may request permissions like camera/storage/location depending on functionality. Permission is requested within the system and you can deny it",
-          infoUsage: "How We Use Information",
-          usagePoint1: "Operating the app's core features",
-          usagePoint2: "Improving performance and user experience",
-          usagePoint3: "Complying with legal requirements",
-          infoSharing: "Sharing Information",
-          sharingText: "We do not sell your data. We may share limited data with service providers for crash processing or analytics in accordance with this policy and processing agreements",
-          thirdParties: "Third Parties and SDKs",
-          thirdPartiesText: "Some applications may use third-party software development kits (SDKs). Review relevant privacy policies:",
-          legalBasis: "Legal Basis (Where Applicable)",
-          legalBasisText: "If you are in the European Economic Area/UK: We rely on a legal basis such as contractual performance, legitimate interest, or consent (where necessary)",
-          dataRetention: "Data Retention",
-          retentionText: "We retain data for the period necessary to achieve the stated purposes, then we delete or anonymize it",
-          yourRights: "Your Rights",
-          right1: "Access, correct, or delete your data",
-          right2: "Withdraw consent when processing is based on it",
-          right3: "Object to processing or request restriction (where legally available)",
-          childrenPrivacy: "Children's Privacy",
-          childrenText: "Our applications do not target children under the age of 13 (or equivalent local age). If you believe we have collected data from a child, please contact us to delete it",
-          policyChanges: "Changes to This Policy",
-          changesText: "We may update this policy periodically. We will publish any changes with updating the 'Last Updated' date above",
-          contactPrivacy: "Contact",
-          contactText: "For inquiries or access/deletion requests, contact via email:",
-          printBtn: "🖨️ Print/Save PDF",
-          directLink: "🔗 Privacy Policy Link",
-          deleteElements: "Delete any elements that do not apply to your applications",
-          emailText: "Email:",
-          officialPage: "Official Page:",
-          googleServices: "Google Services", 
-          metaUsed: "Meta (if used)",
-          microsoftUsed: "Microsoft App Center (if used)"
-      },
-      de: {
-          about: "Über mich",
-          apps: "Meine Apps",
-          privacy: "Datenschutz",
-          contact: "Kontakt",
-          title: "Offizielle Seite | Über mich + Meine Apps + Datenschutz",
-          welcome: "Hallo, ich bin",
-          name: "Sami",
-          role: "Entwickler von Apps für Android, Windows und Amazon, spezialisiert auf digitale Lösungen mit Fokus auf Einfachheit, Leistung und Datenschutz.",
-          aboutTitle: "Kurzvorstellung",
-          aboutText: "Willkommen in meiner digitalen Welt! Ich bin Sami, ein leidenschaftlicher Entwickler, der Ideen in praktische Apps verwandelt. Seit meinen Anfängen in der Programmierung glaube ich, dass gute Apps echte Probleme mit einer außergewöhnlichen Nutzererfahrung lösen. Jede App, die ich veröffentliche, ist das Ergebnis sorgfältiger Recherche und Entwicklung für hervorragende Leistung und geschützte Privatsphäre.",
-          missionText: "Meine Mission ist es, Apps zu entwickeln, die den Alltag der Nutzer ohne Komplexität bereichern – bei höchsten Standards für Qualität und Sicherheit.",
-          appsTitle: "Meine Anwendungen",
-          contactTitle: "Kontakt",
-          rights: "— Alle Rechte vorbehalten.",
-          emailText: "E-Mail:",
-          officialPage: "Offizielle Seite:"
-      }
-  };
-
-  // ====== دوال مساعدة لقراءة/تعديل الرابط ======
-  function getLangFromUrlOrHash() {
-      try {
-          const params = new URLSearchParams(location.search);
-          const p = params.get('lang');
-          if (p && (p === 'ar' || p === 'en' || p === 'de')) return p;
-
-          // check hash like #lang=ar or #ar
-          if (location.hash) {
-              const h = location.hash.replace('#','');
-              if (h === 'ar' || h === 'en' || h === 'de') return h;
-              const m = h.match(/lang=(ar|en|de)/);
-              if (m) return m[1];
-          }
-      } catch(e) {
-          // ignore
-      }
-      return null;
-  }
-
-  function setLangInUrl(lang, useSearch = true) {
-      try {
-          if (useSearch) {
-              const params = new URLSearchParams(location.search);
-              params.set('lang', lang);
-              history.replaceState(null, '', location.pathname + '?' + params.toString() + location.hash);
-          } else {
-              history.replaceState(null, '', location.pathname + location.search + '#lang=' + lang);
-          }
-      } catch(e) {
-          // fallback
-          location.hash = 'lang=' + lang;
-      }
-  }
-
-  // ====== تطبيق الترجمة على عناصر الصفحة ======
-  let currentLang = 'ar';
-  function applyTranslations(lang) {
-      if (!translations[lang]) return;
-      currentLang = lang;
-      document.documentElement.lang = lang;
-      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-      document.title = translations[lang].title || document.title;
-
-      // نصوص عامة (textContent)
-      document.querySelectorAll('[data-translate]').forEach(element => {
-          const key = element.getAttribute('data-translate');
-          if (key && translations[lang][key]) {
-              element.textContent = translations[lang][key];
-          }
-      });
-
-      // عناصر روابط أو عناصر خاصة يمكن أن تحتاج للـ innerHTML
-      document.querySelectorAll('a[data-translate]').forEach(el => {
-          const key = el.getAttribute('data-translate');
-          if (key && translations[lang][key]) el.textContent = translations[lang][key];
-      });
-
-      // تحديث خصائص (مثل placeholder, title, alt) إذا احتجت
-      document.querySelectorAll('[data-translate-attr]').forEach(el => {
-          // صيغة القيمة: "placeholder:searchPlaceholder,title:tipKey"
-          const spec = el.getAttribute('data-translate-attr');
-          if (!spec) return;
-          spec.split(',').forEach(pair => {
-              const parts = pair.split(':');
-              if (parts.length < 2) return;
-              const attr = parts[0].trim();
-              const key = parts[1].trim();
-              if (translations[lang][key]) {
-                  el.setAttribute(attr, translations[lang][key]);
-              }
-          });
-      });
-
-      // تفعيل/تعطيل زر اللغة النشط
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      const activeBtn = document.getElementById('lang-' + lang);
-      if (activeBtn) activeBtn.classList.add('active');
-
-      // the app cards and the policy box are drawn from apps.json by assets/apps-render.js
-      if (window.renderApps) window.renderApps(lang);
-  }
-
-  // ====== الواجهة الخارجية: استدعاء من App Inventor لو أمكن ======
-  window.setAppLang = function(lang) {
-      if (lang !== 'ar' && lang !== 'en' && lang !== 'de') return;
-      applyTranslations(lang);
-      try { setLangInUrl(lang); } catch(e){}
-      if (storageAvailable('localStorage')) {
-          localStorage.setItem('language', lang);
-      }
-  };
-
-  // ====== تهيئة عند التحميل ======
-  window.addEventListener('load', function() {
-      const urlLang = getLangFromUrlOrHash();
-      const canStore = storageAvailable('localStorage');
-      const saved = canStore ? (localStorage.getItem('language') || null) : null;
-      const initial = urlLang || (['ar', 'en', 'de'].indexOf(saved) >= 0 ? saved : null) || 'ar';
-
-      // أول تطبيق
-      applyTranslations(initial);
-
-      // نحاول حفظ الاختيار إن أمكن
-      if (canStore) localStorage.setItem('language', initial);
-
-      // ربط أزرار اللغة إن وُجدت
-      const btnAr = document.getElementById('lang-ar');
-      const btnEn = document.getElementById('lang-en');
-      if (btnAr) btnAr.addEventListener('click', function(e) {
-          applyTranslations('ar');
-          setLangInUrl('ar');
-          if (storageAvailable('localStorage')) localStorage.setItem('language', 'ar');
-      });
-      if (btnEn) btnEn.addEventListener('click', function(e) {
-          applyTranslations('en');
-          setLangInUrl('en');
-          if (storageAvailable('localStorage')) localStorage.setItem('language', 'en');
-      });
-      var btnDe = document.getElementById('lang-de');
-      if (btnDe) btnDe.addEventListener('click', function(e) {
-          applyTranslations('de');
-          setLangInUrl('de');
-          if (storageAvailable('localStorage')) localStorage.setItem('language', 'de');
-      });
-  });
+/* theme, "js" flag and "skip intro" decision before first paint */
+(function () {
+  var d = document.documentElement, t = null, seen = false;
+  try { t = localStorage.getItem('theme'); } catch (e) {}
+  try { seen = sessionStorage.getItem('booted') === '1'; } catch (e) {}
+  if (t !== 'light' && t !== 'dark') t = 'dark';   // dark by default; the visitor's own choice is remembered
+  d.setAttribute('data-theme', t);
+  d.classList.add('js');
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (seen || calm || /[?&]nointro/.test(location.search)) d.classList.add('ready');
 })();
 </script>
+<style>
+:root {
+  --bg: #02030a;
+  --surface: rgba(255,255,255,.05); --surface-2: rgba(255,255,255,.10);
+  --border: rgba(255,255,255,.13); --border-strong: rgba(255,255,255,.30);
+  --text: #f1f4ff; --muted: #a2adcb;
+  --a1: #22d3ee; --a2: #7c83ff; --a3: #f472b6; --a4: #ef4444;
+  --grad: linear-gradient(120deg, var(--a1), var(--a2) 50%, var(--a3));
+  --shadow: 0 24px 70px rgba(0,0,0,.55);
+  --radius: 24px; --btn-text: #04101c;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f4f6fc;
+  --surface: rgba(255,255,255,.62); --surface-2: rgba(255,255,255,.92);
+  --border: rgba(15,23,42,.10); --border-strong: rgba(15,23,42,.26);
+  --text: #0c1226; --muted: #4f5a76;
+  --a1: #0891b2; --a2: #4f46e5; --a3: #db2777;
+  --shadow: 0 20px 55px rgba(30,41,90,.16); --btn-text: #ffffff;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Tahoma, Arial, sans-serif;
+  line-height: 1.7; color: var(--text); background: var(--bg); overflow-x: hidden; min-height: 100vh; text-align: start; transition: background .5s, color .5s; }
+a { color: inherit; } img { max-width: 100%; }
+.container { width: min(1180px, 100% - 32px); margin-inline: auto; }
+
+/* ---------- living background ---------- */
+#gl, #net { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -3; display: block; pointer-events: none; }
+#net { z-index: -2; }
+#gl { opacity: 0; transition: opacity 1.6s; }
+.gl-on #gl { opacity: 1; }
+.fallback-glow { position: fixed; inset: 0; z-index: -4; pointer-events: none;
+  background: radial-gradient(60vmax 50vmax at 12% 8%, rgba(34,211,238,.28), transparent 60%), radial-gradient(55vmax 45vmax at 90% 30%, rgba(124,131,255,.28), transparent 60%), radial-gradient(60vmax 50vmax at 50% 105%, rgba(244,114,182,.22), transparent 60%); }
+.grain { position: fixed; inset: -50%; width: 200%; height: 200%; z-index: 2; pointer-events: none; opacity: .07; mix-blend-mode: overlay; animation: grain 1.2s steps(6) infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+@keyframes grain { 0% { transform: translate(0,0); } 20% { transform: translate(-3%,2%); } 40% { transform: translate(2%,-3%); } 60% { transform: translate(-2%,-1%); } 80% { transform: translate(3%,3%); } 100% { transform: translate(0,0); } }
+#progress { position: fixed; top: 0; inset-inline: 0; height: 3px; z-index: 70; transform-origin: 0 50%; transform: scaleX(0); background: var(--grad); box-shadow: 0 0 14px var(--a2); }
+[dir="rtl"] #progress { transform-origin: 100% 50%; }
+
+/* ---------- boot screen ---------- */
+#boot { display: none; }
+.js #boot { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: #02030a; color: #cfe3ff; transition: opacity .8s .1s, visibility .8s .1s, transform 1s cubic-bezier(.7,0,.2,1); }
+.ready #boot { opacity: 0; visibility: hidden; transform: scale(1.06); pointer-events: none; }
+#boot .in { text-align: center; width: min(320px, 80vw); }
+#boot .lg { width: 110px; height: 110px; margin: 0 auto 26px; display: grid; place-items: center; animation: bpulse 1.4s ease-in-out infinite; filter: drop-shadow(0 0 40px rgba(124,131,255,.55)); }
+#boot .lg img { width: 100%; height: 100%; object-fit: contain; }
+@keyframes bpulse { 50% { transform: scale(1.07); filter: drop-shadow(0 0 64px rgba(34,211,238,.7)); } }
+#boot .bar-out { height: 3px; border-radius: 3px; background: rgba(255,255,255,.12); overflow: hidden; }
+#boot .bar-in { height: 100%; transform: scaleX(0); transform-origin: 0 50%; background: linear-gradient(90deg, #22d3ee, #7c83ff, #f472b6); }
+#boot .txt { margin-top: 14px; font: 600 .82rem ui-monospace, Consolas, monospace; letter-spacing: 2px; color: #7f8db3; direction: ltr; }
+#boot .pct { color: #22d3ee; }
+
+/* ---------- header ---------- */
+header { position: sticky; top: 12px; z-index: 50; margin-top: 12px; }
+.bar { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6); box-shadow: var(--shadow); }
+.brand { white-space: nowrap; display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; letter-spacing: .5px; }
+.logo { width: 66px; height: 50px; margin-block: -4px; display: grid; place-items: center; filter: drop-shadow(0 4px 10px rgba(239,68,68,.45)); }
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+.links { display: flex; gap: 4px; margin-inline: auto; }
+.links a { text-decoration: none; white-space: nowrap; padding: 8px 13px; border-radius: 999px; color: var(--muted); font-weight: 600; font-size: .95rem; transition: .25s; }
+.links a:hover { color: var(--text); background: var(--surface-2); }
+.links a.active { color: var(--text); background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.tools { display: flex; align-items: center; gap: 8px; }
+.language-switcher { display: flex; padding: 3px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); }
+.lang-btn { border: 0; background: transparent; color: var(--muted); padding: 5px 12px; border-radius: 999px; cursor: pointer; font: inherit; font-size: .85rem; font-weight: 700; transition: background .25s, color .25s; }
+.lang-btn.active { background: var(--grad); color: var(--btn-text); }
+.icon-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; display: grid; place-items: center; transition: background .25s; }
+.icon-btn:hover { background: var(--surface-2); }
+.icon-btn svg { width: 19px; height: 19px; }
+#theme-toggle .moon { display: none; }
+:root[data-theme="light"] #theme-toggle .sun { display: none; } :root[data-theme="light"] #theme-toggle .moon { display: block; }
+.menu-toggle { display: none; }
+.lang-btn, .icon-btn, .cta a, .policy-link, .chip { transform: translate(var(--tx, 0), var(--ty2, 0)); }
+
+/* ---------- hero ---------- */
+#about { padding-top: 54px; overflow-x: clip; }
+html, body { overflow-x: clip; }
+.hero { display: grid; grid-template-columns: 1.2fr .9fr; gap: 40px; align-items: center; min-height: 74vh; }
+.badge { display: inline-flex; align-items: center; gap: 9px; padding: 6px 15px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: .88rem; font-weight: 600; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.badge b { width: 8px; height: 8px; border-radius: 50%; background: #34d399; animation: ping 2s infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.7); } 70%, 100% { box-shadow: 0 0 0 11px rgba(52,211,153,0); } }
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height: 1.08; margin: 20px 0 16px; font-weight: 800; letter-spacing: -1px; }
+.role { color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.28rem); max-width: 58ch; }
+.w { display: inline-block; overflow: hidden; vertical-align: top; padding-block: .06em; margin-block: -.06em; }
+.w > i { display: inline-block; font-style: normal; transform: translateY(115%) rotate(4deg); opacity: 0; filter: blur(8px); transition: transform .95s cubic-bezier(.2,.9,.2,1) calc(var(--i, 0) * 85ms + 120ms), opacity .8s calc(var(--i, 0) * 85ms + 120ms), filter .9s calc(var(--i, 0) * 85ms + 120ms); }
+.w.go > i { transform: none; opacity: 1; filter: none; }
+.grad-text .w > i, .grad-text { background: var(--grad); background-size: 220% 220%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: shine 7s ease infinite; }
+@keyframes shine { 50% { background-position: 100% 50%; } }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn, .cta a { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; cursor: pointer; font: inherit; font-weight: 700; border: 0; }
+.cta .primary, .btn { position: relative; overflow: hidden; background: var(--grad); background-size: 200% 100%; color: var(--btn-text); padding: 13px 28px; border-radius: 999px; box-shadow: 0 12px 32px rgba(99,102,241,.45); transition: box-shadow .3s, background-position .5s, transform .15s; }
+.cta .primary::after, .btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-120%); transition: transform .7s; }
+.cta .primary:hover, .btn:hover { box-shadow: 0 18px 44px rgba(99,102,241,.62); background-position: 100% 0; }
+.cta .primary:hover::after, .btn:hover::after { transform: translateX(120%); }
+.cta .ghost { padding: 13px 28px; border-radius: 999px; color: var(--text); background: var(--surface); border: 1px solid var(--border-strong); transition: background .25s; }
+.cta .ghost:hover { background: var(--surface-2); }
+.platforms { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.platforms span { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px 7px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: .9rem; font-weight: 600; }
+.platforms img { width: 20px; height: 20px; }
+.hero > .intro > * { opacity: 0; transform: translateY(16px); transition: opacity .8s, transform .8s; }
+.ready .hero > .intro > * { opacity: 1; transform: none; }
+.ready .hero > .intro > .cta { transition-delay: .55s; } .ready .hero > .intro > .platforms { transition-delay: .7s; } .ready .hero > .intro > .badge { transition-delay: .1s; }
+.ready .hero > .intro > h1, .ready .hero > .intro > .role { transition-delay: 0s; }
+
+/* orbiting logo */
+.orb { position: relative; display: grid; place-items: center; aspect-ratio: 1; max-width: 440px; margin-inline: auto; width: 100%; transform: translateY(calc(var(--sy, 0) * -.06px)); perspective: 900px; opacity: 0; transition: opacity 1.2s .3s; }
+.ready .orb { opacity: 1; }
+.orb::before { content: ""; position: absolute; inset: 7%; border-radius: 50%; background: conic-gradient(from 0deg, var(--a1), var(--a2), var(--a3), var(--a4), var(--a1)); animation: spin 12s linear infinite;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px)); mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px)); filter: drop-shadow(0 0 14px var(--a2)); }
+.orb::after { content: ""; position: absolute; inset: 18%; border-radius: 50%; background: radial-gradient(circle, rgba(239,68,68,.5), rgba(124,131,255,.25) 45%, transparent 68%); filter: blur(34px); animation: breathe 5s ease-in-out infinite; }
+@keyframes breathe { 50% { transform: scale(1.18); opacity: .8; } }
+.orb .core { position: relative; z-index: 2; width: 76%; aspect-ratio: 1; display: grid; place-items: center; cursor: pointer; border-radius: 50%; }
+.orb .core img { width: 80%; height: auto; max-width: none; display: block; }
+.orb .core:hover img { animation: glitch .5s steps(2) infinite; }
+@keyframes glitch { 0% { filter: drop-shadow(4px 0 0 rgba(255,0,80,.8)) drop-shadow(-4px 0 0 rgba(0,220,255,.8)); transform: translate(1px,0); } 50% { filter: drop-shadow(-3px 1px 0 rgba(255,0,80,.8)) drop-shadow(3px -1px 0 rgba(0,220,255,.8)); transform: translate(-1px,1px); } 100% { filter: none; } }
+.orb .ring { position: absolute; border-radius: 50%; border: 1px dashed var(--border-strong); animation: spin 46s linear infinite reverse; }
+.orb .r1 { inset: 0; } .orb .r2 { inset: 13%; animation-duration: 60s; animation-direction: normal; }
+.orbit { position: absolute; inset: 0; z-index: 3; transform: rotate(var(--th, 0deg)); pointer-events: none; }
+.orbit .o { position: absolute; inset: 0; transform: rotate(var(--a)); }
+.orbit .o b { position: absolute; top: -1%; inset-inline-start: calc(50% - 28px); width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center; pointer-events: auto; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; background: var(--surface-2); border: 1px solid var(--border-strong); box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 24px rgba(124,131,255,.35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transform: rotate(calc(-1 * var(--a) - var(--th, 0deg))); transition: box-shadow .25s, scale .25s; }
+.orbit .o b img { width: 30px; height: 30px; pointer-events: none; }
+.orbit .o b:hover { scale: 1.12; box-shadow: 0 14px 34px rgba(0,0,0,.5), 0 0 34px rgba(34,211,238,.55); }
+.orbit.grabbing .o b { cursor: grabbing; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes unspin { from { transform: rotate(calc(-1 * var(--a))); } to { transform: rotate(calc(-1 * var(--a) - 360deg)); } }
+@keyframes float { 50% { transform: translateY(-16px); } }
+
+/* ---------- sections ---------- */
+.glass, #privacy-policy { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.bio { margin-top: 56px; padding: clamp(24px, 4vw, 44px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 34px; align-items: start; }
+.bio h2, #apps > h2, .stores-title { font-size: clamp(1.7rem, 3.6vw, 2.5rem); line-height: 1.2; margin-bottom: 14px; font-weight: 800; }
+.bio p { color: var(--muted); font-size: 1.05rem; margin-top: 10px; }
+.bio blockquote { position: relative; padding: 24px 26px; border-radius: 20px; background: linear-gradient(135deg, rgba(34,211,238,.14), rgba(244,114,182,.14)); border: 1px solid var(--border); font-size: 1.1rem; font-weight: 600; overflow: hidden; }
+.bio blockquote::after { content: "”"; position: absolute; inset-inline-end: 16px; top: -18px; font-size: 6rem; color: var(--a2); opacity: .22; font-family: Georgia, serif; }
+.bio blockquote small { display: block; color: var(--a1); font-weight: 800; letter-spacing: 1.2px; margin-bottom: 8px; font-size: .78rem; text-transform: uppercase; }
+.stores-title { margin-top: 70px; text-align: center; }
+.store-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; perspective: 1200px; }
+section { padding-block: 24px; }
+#apps { padding-top: 70px; }
+#apps > h2 { text-align: center; }
+#apps > h2::after { content: ""; display: block; width: 84px; height: 4px; margin: 14px auto 0; border-radius: 4px; background: var(--grad); box-shadow: 0 0 18px var(--a2); }
+
+/* ---------- holographic cards ---------- */
+.store-tile, .app-card { position: relative; isolation: isolate; overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); will-change: transform;
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px)) scale(var(--sc, 1));
+  transition: transform .18s ease-out, border-color .3s, box-shadow .3s; }
+.store-tile::before, .app-card::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 0%), rgba(124,131,255,.32), transparent 60%); }
+.store-tile::after, .app-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 3; opacity: 0; transition: opacity .35s; mix-blend-mode: color-dodge;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.26), transparent 36%),
+              linear-gradient(115deg, transparent 15%, rgba(255,0,150,.22) 32%, rgba(0,255,220,.22) 46%, rgba(255,230,0,.19) 60%, rgba(120,90,255,.22) 74%, transparent 88%);
+  background-size: 100% 100%, 260% 260%; background-position: 0 0, var(--mx, 50%) var(--my, 50%); }
+:root[data-theme="light"] .store-tile::after, :root[data-theme="light"] .app-card::after { mix-blend-mode: soft-light; }
+.store-tile:hover, .app-card:hover { border-color: var(--border-strong); box-shadow: 0 34px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(124,131,255,.35), 0 0 60px rgba(124,131,255,.25); }
+.store-tile:hover::before, .app-card:hover::before, .store-tile:hover::after, .app-card:hover::after { opacity: 1; }
+.store-tile { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 22px 18px; text-decoration: none; }
+.store-icon { display: block; height: 52px; }
+.store-icon img { width: 52px; height: 52px; display: block; margin: 0 auto; filter: drop-shadow(0 8px 16px rgba(0,0,0,.4)); transition: transform .4s cubic-bezier(.2,.9,.2,1.4); transform: translateZ(40px); }
+.store-tile:hover .store-icon img { transform: scale(1.22) rotate(-6deg); }
+.store-title { font-weight: 800; font-size: 1.25rem; } .store-text { color: var(--muted); font-size: .95rem; }
+.store-open { margin-top: 12px; padding: 8px 22px; border-radius: 999px; background: var(--grad); color: var(--btn-text); font-weight: 700; font-size: .9rem; }
+.apps-filter { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 26px 0 8px; }
+.chip { border: 1px solid var(--border); background: var(--surface); color: var(--muted); padding: 9px 22px; border-radius: 999px; cursor: pointer; font: inherit; font-weight: 700; transition: background .25s, color .25s, border-color .25s; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.chip:hover { color: var(--text); border-color: var(--border-strong); }
+.chip.active { background: var(--grad); color: var(--btn-text); border-color: transparent; box-shadow: 0 10px 26px rgba(99,102,241,.45); }
+.apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 16px; margin-top: 22px; perspective: 1400px; }
+.app-card { display: flex; flex-direction: column; gap: 4px; padding: 20px 18px 18px; animation: card-in .9s cubic-bezier(.2,.9,.2,1) backwards; }
+.app-card:nth-child(2) { animation-delay: .06s; } .app-card:nth-child(3) { animation-delay: .12s; } .app-card:nth-child(4) { animation-delay: .18s; }
+.app-card:nth-child(5) { animation-delay: .24s; } .app-card:nth-child(6) { animation-delay: .3s; } .app-card:nth-child(n+7) { animation-delay: .36s; }
+@keyframes card-in { from { opacity: 0; transform: perspective(900px) translateY(60px) rotateX(-22deg) scale(.92); filter: blur(6px); } to { opacity: 1; transform: perspective(900px); filter: none; } }
+.app-icon { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 26px rgba(0,0,0,.45), 0 0 0 1px var(--border); margin-bottom: 8px; transition: transform .4s cubic-bezier(.2,.9,.2,1.4); transform: translateZ(30px); cursor: zoom-in; }
+.app-card:hover .app-icon { transform: scale(1.06); }
+.app-card h3 { font-size: 1.08rem; line-height: 1.3; font-weight: 800; }
+.app-card h3 a { text-decoration: none; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.app-card p { color: var(--muted); font-size: .86rem; line-height: 1.55; }
+.app-card p:has(> strong) { font-size: .78rem; display: flex; flex-wrap: wrap; gap: 4px; padding-top: 4px; border-top: 1px dashed var(--border); }
+.app-card p:has(> strong) strong { color: var(--text); font-weight: 700; }
+.app-card .btn { margin-top: 6px; width: 100%; padding: 9px 14px; font-size: .84rem; }
+.app-card .btn + .btn { margin-top: 6px; background: var(--surface-2); color: var(--text); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.app-card .btn:first-of-type { margin-top: auto; }
+.app-card p:last-of-type { margin-bottom: 10px; }
+.app-card p:not(:has(> strong)) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ---------- privacy / contact / footer ---------- */
+#privacy-policy { margin-top: 64px; padding: clamp(24px, 4vw, 38px); display: grid; grid-template-columns: auto 1fr auto; gap: 8px 24px; align-items: center; position: relative; overflow: hidden; }
+#privacy-policy::before { content: ""; width: 68px; height: 68px; grid-row: 1 / span 2; border-radius: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E") center / 58% no-repeat, var(--grad);
+  box-shadow: 0 12px 30px rgba(99,102,241,.5); animation: float 5s ease-in-out infinite; }
+#privacy-policy h2 { font-size: 1.45rem; margin: 0; }
+#privacy-policy .policy-text { color: var(--muted); grid-column: 2; }
+#privacy-policy .policy-link { grid-column: 3; grid-row: 1 / span 2; white-space: nowrap; }
+#contact { margin-top: 28px; padding: clamp(24px, 4vw, 38px); }
+#contact h2 { font-size: 1.45rem; margin-bottom: 10px; }
+#contact ul { list-style: none; display: grid; gap: 10px; } #contact li { color: var(--muted); }
+#contact li a { color: var(--a1); font-weight: 700; text-decoration: none; border-bottom: 1px solid transparent; transition: .2s; } #contact li a:hover { border-color: currentColor; }
+footer { text-align: center; color: var(--muted); padding: 44px 16px 52px; font-size: .92rem; } footer a { color: var(--text); text-decoration: none; font-weight: 700; }
 
 
+
+
+/* the two theme-specific cut-outs */
+:root[data-theme="dark"] .lg-l, :root[data-theme="light"] .lg-d { display: none; }
+/* rings that leave the logo by themselves, again and again, and stop at the logo circle */
+.pulse { position: absolute; left: 50%; top: 50%; width: 74%; aspect-ratio: 1; border-radius: 50%; pointer-events: none; z-index: 1; opacity: 0; transform: translate(-50%, -50%) scale(.2);
+  border: 3px solid #ff3b47; box-shadow: 0 0 36px 4px rgba(255,59,71,.75), inset 0 0 34px rgba(255,59,71,.55); animation: pulse-loop 2.8s cubic-bezier(.2,.7,.3,1) infinite; }
+.pulse.p2 { animation-delay: 1.4s; }
+:root[data-theme="light"] .pulse { border-color: #e11d2e; box-shadow: 0 0 30px 3px rgba(225,29,46,.6), inset 0 0 30px rgba(225,29,46,.4); }
+@keyframes pulse-loop { 0% { transform: translate(-50%, -50%) scale(.2); opacity: 1; } 75% { opacity: .9; } 100% { transform: translate(-50%, -50%) scale(1); opacity: 0; } }
+/* big e-mail */
+#contact h2 { font-size: clamp(1.05rem, 1.8vw, 1.3rem); color: var(--muted); font-weight: 700; }
+.mail { display: inline-block; font-size: clamp(1.45rem, 5vw, 3.7rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.15; text-decoration: none; direction: ltr; word-break: break-all;
+  background: linear-gradient(90deg, var(--a1), var(--a2), var(--a3), var(--text) 66%, var(--text)); background-size: 300% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; transition: background-position .9s cubic-bezier(.2,.8,.2,1); }
+.mail:hover { background-position: 0 0; }
+.mail span { display: inline-block; -webkit-text-fill-color: var(--a2); transition: transform .4s cubic-bezier(.2,.9,.2,1.4); } .mail:hover span { transform: translate(6px, -6px) rotate(8deg); }
+#contact ul { margin-top: 18px; }
+/* app icon floats under the pointer */
+#peek { position: fixed; top: 0; left: 0; z-index: 80; pointer-events: none; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; opacity: 0; transform: scale(.5);
+  box-shadow: 0 30px 70px rgba(0,0,0,.55), 0 0 0 2px var(--a2), 0 0 50px rgba(124,131,255,.5); transition: opacity .25s; }
+#peek.on { opacity: 1; } #peek img { width: 100%; height: 100%; object-fit: cover; }
+/* sound toggle */
+#sound-toggle .off { display: block; } #sound-toggle .on { display: none; }
+#sound-toggle.sound-on .off { display: none; } #sound-toggle.sound-on .on { display: block; }
+#sound-toggle.sound-on { box-shadow: 0 0 0 2px var(--a1), 0 0 18px rgba(34,211,238,.45); }
+.js .reveal { opacity: 0; transform: translateY(34px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+:focus-visible { outline: 2px solid var(--a1); outline-offset: 3px; border-radius: 8px; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; text-align: center; }
+  .hero .role { margin-inline: auto; } .cta, .platforms { justify-content: center; }
+  .orb { max-width: 300px; order: -1; } .bio { grid-template-columns: 1fr; }
+  #privacy-policy { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  #privacy-policy::before { grid-row: auto; } #privacy-policy .policy-text, #privacy-policy .policy-link { grid-column: 1; grid-row: auto; }
+}
+@media (max-width: 780px) {
+  .bar { border-radius: 26px; flex-wrap: wrap; } .menu-toggle { display: grid; margin-inline-start: auto; }
+  .links { display: none; order: 5; width: 100%; flex-direction: column; margin: 6px 0 2px; } .links.active { display: flex; } .tools { order: 3; }
+  .grain { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .reveal, .hero > .intro > *, .orb { opacity: 1; transform: none; } .w > i { transform: none; opacity: 1; filter: none; } .grain, #boot, .pulse { display: none !important; }
+}
+@media print { #gl, #net, .grain, .fallback-glow, header, #progress, #boot, .cta, .platforms { display: none !important; } body { background: #fff; color: #000; } }
+</style>
 </head>
 <body>
+<div class="fallback-glow" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<div id="boot" aria-hidden="true">
+  <div class="in">
+    <div class="lg"><img src="assets/logo-dark.png" alt=""></div>
+    <div class="bar-out"><div class="bar-in"></div></div>
+    <div class="txt">SAMI-ROR-TECH · <span class="pct">0</span>%</div>
+  </div>
+</div>
+
 <header>
-<!-- في قسم الهيدر، أضف هذا العنصر -->
-<div class="language-switcher">
-    <button id="lang-ar" class="lang-btn active">العربية</button>
-    <button id="lang-en" class="lang-btn">English</button>
-    <button id="lang-de" class="lang-btn">Deutsch</button>
-</div>
-<div class="container">
-  <div class="brand">
-    <div class="logo"><img src="assets/logo.png" alt="SAMI-ROR-TECH" style="width:100%;height:100%;object-fit:contain;border-radius:50%;"></div>
-    <div class="name">SAMI-ROR-TECH</div>
+  <div class="container">
+    <div class="bar">
+      <a class="brand" href="#about"><span class="logo"><img class="lg-l" src="assets/logo-light.png" alt="SAMI-ROR-TECH"><img class="lg-d" src="assets/logo-dark.png" alt="SAMI-ROR-TECH"></span><span class="name">SAMI-ROR-TECH</span></a>
+      <nav class="links" id="links">
+        <a href="#about" class="active" data-translate="about">عنّي</a>
+        <a href="#apps" data-translate="apps">تطبيقاتي</a>
+        <a href="#privacy-policy" data-translate="privacy">سياسة الخصوصية</a>
+        <a href="#contact" data-translate="contact">تواصل</a>
+      </nav>
+      <div class="tools">
+        <div class="language-switcher">
+          <button id="lang-ar" class="lang-btn active" type="button">العربية</button>
+          <button id="lang-en" class="lang-btn" type="button">English</button>
+          <button id="lang-de" class="lang-btn" type="button">Deutsch</button>
+        </div>
+        <button id="sound-toggle" class="icon-btn" type="button" aria-label="Sound" aria-pressed="false" title="Sound">
+          <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+          <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        </button>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        </button>
+        <button class="menu-toggle icon-btn" type="button" aria-label="Menu" id="menu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
   </div>
-  
-   <button class="menu-toggle">☰</button>
-  
-  <div class="links">
-<a href="#about" class="active" data-translate="about">عنّي</a>
-<a href="#apps" data-translate="apps">تطبيقاتي</a>
-<a href="#privacy-policy" data-translate="privacy">سياسة الخصوصية</a>
-<a href="#contact" data-translate="contact">تواصل</a>
-  </div>
-</div>
 </header>
 
 <main class="container">
-
-<section id="about" class="card fade-in">
-<h1><span data-translate="welcome">مرحبًا، أنا</span> <span style="color:var(--primary);font-weight:800" data-translate="name">سامي</span></h1>
-<p class="muted" data-translate="role">مطوّر تطبيقات لأندرويد وويندوز وأمازون، متخصص في بناء حلول رقمية تركز على البساطة والأداء والخصوصية.</p>
-<div class="hr"></div>
-<div class="grid">
-  <div>
-    <h2 data-translate="aboutTitle">نبذة عني</h2>
-    <p data-translate="aboutText">أهلاً بكم في عالمي الرقمي! أنا سامي، مطوّر شغوف بتحويل الأفكار إلى تطبيقات عملية. منذ بدايتي في مجال البرمجة، وأنا أؤمن بأن التطبيقات الجيدة هي تلك التي تحل مشاكل حقيقية بتجربة مستخدم استثنائية. كل تطبيق أطلقه هو نتاج بحث وتطوير دقيق لضمان أداء ممتاز وخصوصية محفوظة.</p>
-    <p data-translate="missionText">رسالتي هي تطوير تطبيقات تثري حياة المستخدمين اليومية دون تعقيد، مع الحفاظ على أعلى معايير الجودة والأمان.</p>
+<section id="about">
+  <div class="hero">
+    <div class="intro">
+      <span class="badge"><b></b><span data-translate="badge">متاح على أندرويد · ويندوز · أمازون</span></span>
+      <h1><span data-translate="welcome">مرحبًا، أنا</span> <span class="grad-text" data-translate="name">سامي</span></h1>
+      <p class="role" data-translate="role">مطوّر تطبيقات لأندرويد وويندوز وأمازون، متخصص في بناء حلول رقمية تركز على البساطة والأداء والخصوصية.</p>
+      <div class="cta">
+        <a class="primary" href="#apps" data-translate="ctaApps">تصفّح تطبيقاتي</a>
+        <a class="ghost" href="#contact" data-translate="ctaContact">تواصل معي</a>
+      </div>
+      <div class="platforms">
+        <span><img src="assets/stores/android.svg" alt="" width="20" height="20">Android</span>
+        <span><img src="assets/stores/windows.svg" alt="" width="20" height="20">Windows</span>
+        <span><img src="assets/stores/amazon.svg" alt="" width="20" height="20">Amazon</span>
+      </div>
+    </div>
+    <div class="orb" aria-hidden="true">
+      <span class="ring r1"></span><span class="ring r2"></span>
+      <div class="orbit">
+        <span class="o" style="--a:0deg"><b><img src="assets/stores/android.svg" alt=""></b></span>
+        <span class="o" style="--a:120deg"><b><img src="assets/stores/windows.svg" alt=""></b></span>
+        <span class="o" style="--a:240deg"><b><img src="assets/stores/amazon.svg" alt=""></b></span>
+      </div>
+      <div class="core"><img class="lg-l" src="assets/logo-light.png" alt=""><img class="lg-d" src="assets/logo-dark.png" alt=""></div>
+      <span class="pulse"></span><span class="pulse p2"></span>
+    </div>
   </div>
-</div>
-<div class="hr"></div>
+  <div class="bio glass reveal">
+    <div>
+      <h2 data-translate="aboutTitle">نبذة عني</h2>
+      <p data-translate="aboutText">أهلاً بكم في عالمي الرقمي! أنا سامي، مطوّر شغوف بتحويل الأفكار إلى تطبيقات عملية. منذ بدايتي في مجال البرمجة، وأنا أؤمن بأن التطبيقات الجيدة هي تلك التي تحل مشاكل حقيقية بتجربة مستخدم استثنائية. كل تطبيق أطلقه هو نتاج بحث وتطوير دقيق لضمان أداء ممتاز وخصوصية محفوظة.</p>
+    </div>
+    <blockquote><small data-translate="missionLabel">رسالتي</small><span data-translate="missionText">رسالتي هي تطوير تطبيقات تثري حياة المستخدمين اليومية دون تعقيد، مع الحفاظ على أعلى معايير الجودة والأمان.</span></blockquote>
+  </div>
+
 <!-- STORES:START -->
 <h2 class="stores-title">أين تجد تطبيقاتي</h2>
 <div class="store-tiles">
@@ -961,13 +381,13 @@ footer {
 <!-- STORES:END -->
 </section>
 
-<section id="apps" class="fade-in">
+<section id="apps">
 <h2 data-translate="appsTitle">تطبيقاتي</h2>
 <div id="apps-filter" class="apps-filter"></div>
 <div class="apps-grid">
 <!-- APPS:CARDS:START -->
 <div class="app-card" data-id="app_2">
-  <img src="assets/icons/app_2.png" alt="سورة الفاتحة" class="app-icon">
+  <img src="assets/icons/app_2.png" alt="سورة الفاتحة" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha" target="_blank" rel="noopener">سورة الفاتحة</a></h3>
   <p>يتيح لك الاستماع إلى تلاوة سُورَة اَلْفَاتِحَة مع عرض نصها المكتوب و تفسيرها</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -978,7 +398,7 @@ footer {
 </div>
 
 <div class="app-card" data-id="alikhlas">
-  <img src="assets/icons/alikhlas.png" alt="سورة الإخلاص" class="app-icon">
+  <img src="assets/icons/alikhlas.png" alt="سورة الإخلاص" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas" target="_blank" rel="noopener">سورة الإخلاص</a></h3>
   <p>تطبيق يتيح لك الاستماع إلى تلاوة لسورة الإخلاص مع عرض نصها المكتوب و تفسيرها</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -989,7 +409,7 @@ footer {
 </div>
 
 <div class="app-card" data-id="my_youtube_channel">
-  <img src="assets/icons/my_youtube_channel.png" alt="My channel" class="app-icon">
+  <img src="assets/icons/my_youtube_channel.png" alt="My channel" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel" target="_blank" rel="noopener">My channel</a></h3>
   <p>برنامج لعرض قناتي على منصة اليوتيوب</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -1000,7 +420,7 @@ footer {
 </div>
 
 <div class="app-card" data-id="al_kursi">
-  <img src="assets/icons/al_kursi.png" alt="آية الكرسي" class="app-icon">
+  <img src="assets/icons/al_kursi.png" alt="آية الكرسي" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi" target="_blank" rel="noopener">آية الكرسي</a></h3>
   <p>آية الكرسي هو تطبيق مجاني بالصوت والترتيل ومكتوبة بخط جميل</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -1011,7 +431,7 @@ footer {
 </div>
 
 <div class="app-card" data-id="verses">
-  <img src="assets/icons/verses.png" alt="المعوذات الثلاث" class="app-icon">
+  <img src="assets/icons/verses.png" alt="المعوذات الثلاث" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist" target="_blank" rel="noopener">المعوذات الثلاث</a></h3>
   <p>رفيقك اليومي للحماية والتحصين. استمع لتلاوة السور مع التفسير والنص واذكار النوم</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -1022,7 +442,7 @@ footer {
 </div>
 
 <div class="app-card" data-id="video_player">
-  <img src="assets/icons/video_player.png" alt="video Player - مشغل الفيديو" class="app-icon">
+  <img src="assets/icons/video_player.png" alt="video Player - مشغل الفيديو" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer" target="_blank" rel="noopener">video Player - مشغل الفيديو</a></h3>
   <p>video Player - مشغل الفيديو بكل صيغ أداة تشغيل الفيديو عالي الدقة</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -1032,16 +452,74 @@ footer {
   <a class="btn" href="https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer" target="_blank" rel="noopener">Google Play</a>
 </div>
 
-<div class="app-card" data-id="keyvault">
-  <img src="assets/icons/keyvault.png" alt="KeyVault" class="app-icon">
-  <h3>KeyVault</h3>
-  <p>برنامج ويندوز يحفظ مفاتيح توقيع تطبيقات أندرويد وكلمات سرّها في مكان واحد منظّم، بدون إنترنت وبدون حساب.</p>
+<div class="app-card" data-id="app_3">
+  <img src="assets/icons/app_3.png" alt="أصوات الحيوانات" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds" target="_blank" rel="noopener">أصوات الحيوانات</a></h3>
+  <p>إضغط واستمع! تعرّف على أصوات الحيوانات الأليفة والمفترسة بواجهة سهلة وجذابة</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Windows</bdi></p>
+  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">03-10-2026</bdi></p>
+  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds" target="_blank" rel="noopener">Google Play</a>
+</div>
+
+<div class="app-card" data-id="app_4">
+  <img src="assets/icons/app_4.png" alt="التكاثر" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur" target="_blank" rel="noopener">التكاثر</a></h3>
+  <p>ستمع واقرأ وتدبر معاني سورة التكاثر. مع التفسير الميسر وبعض الادعية من القرآن.</p>
+  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
+  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">02-10-2026</bdi></p>
+  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur" target="_blank" rel="noopener">Google Play</a>
+</div>
+
+<div class="app-card" data-id="app_5">
+  <img src="assets/icons/app_5.png" alt="سورة الشرح" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh" target="_blank" rel="noopener">سورة الشرح</a></h3>
+  <p>سورة الشرح : تلاوة مؤثرة، قراءة واضحة، وتفسير شامل.بالإضافة الى الأدعية</p>
+  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
+  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">30-09-2026</bdi></p>
+  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh" target="_blank" rel="noopener">Google Play</a>
+</div>
+
+<div class="app-card" data-id="app_6">
+  <img src="assets/icons/app_6.png" alt="Flash Light المصباح" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight" target="_blank" rel="noopener">Flash Light المصباح</a></h3>
+  <p>المصباح برنامج تشغيل الاضائة LED</p>
+  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
+  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">01-10-2026</bdi></p>
+  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight" target="_blank" rel="noopener">Google Play</a>
+</div>
+
+<div class="app-card" data-id="app_7">
+  <img src="assets/icons/app_7.png" alt="Mobile test hardware" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ" target="_blank" rel="noopener">Mobile test hardware</a></h3>
+  <p>كل ما كنت تود معرفته حول جهازك الأندرويد</p>
+  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
+  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">29-09-2024</bdi></p>
+  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ" target="_blank" rel="noopener">Google Play</a>
+</div>
+
+<div class="app-card" data-id="app_8">
+  <img src="assets/icons/app_8.png" alt="معلومات البطارية" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv" target="_blank" rel="noopener">معلومات البطارية</a></h3>
+  <p>تطبيق البطارية يشير إلى معلومات عن البطارية.</p>
+  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
+  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">25-08-2025</bdi></p>
+  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv" target="_blank" rel="noopener">Google Play</a>
 </div>
 
 <div class="app-card" data-id="app">
-  <img src="assets/icons/app.png" alt="لمحة Lamha – شاشة معلومات" class="app-icon">
+  <img src="assets/icons/app.png" alt="لمحة Lamha – شاشة معلومات" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
   <h3><a href="https://play.google.com/store/apps/details?id=com.samiror.lamha" target="_blank" rel="noopener">لمحة Lamha – شاشة معلومات</a></h3>
   <p>حوّل جوالك أو تلفازك إلى شاشة معلومات هادئة: ساعة وطقس ومواعيد وأذكار.</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
@@ -1053,70 +531,12 @@ footer {
   <a class="btn" href="https://www.amazon.com/gp/product/B0HPBGNXC9" target="_blank" rel="noopener">Amazon Appstore</a>
 </div>
 
-<div class="app-card" data-id="app_3">
-  <img src="assets/icons/app_3.png" alt="أصوات الحيوانات" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds" target="_blank" rel="noopener">أصوات الحيوانات</a></h3>
-  <p>إضغط واستمع! تعرّف على أصوات الحيوانات الأليفة والمفترسة بواجهة سهلة وجذابة</p>
+<div class="app-card" data-id="keyvault">
+  <img src="assets/icons/keyvault.png" alt="KeyVault" class="app-icon" width="84" height="84" loading="lazy" decoding="async">
+  <h3>KeyVault</h3>
+  <p>برنامج ويندوز يحفظ مفاتيح توقيع تطبيقات أندرويد وكلمات سرّها في مكان واحد منظّم، بدون إنترنت وبدون حساب.</p>
   <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">03-10-2026</bdi></p>
-  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds" target="_blank" rel="noopener">Google Play</a>
-</div>
-
-<div class="app-card" data-id="app_4">
-  <img src="assets/icons/app_4.png" alt="التكاثر" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur" target="_blank" rel="noopener">التكاثر</a></h3>
-  <p>ستمع واقرأ وتدبر معاني سورة التكاثر. مع التفسير الميسر وبعض الادعية من القرآن.</p>
-  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">02-10-2026</bdi></p>
-  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur" target="_blank" rel="noopener">Google Play</a>
-</div>
-
-<div class="app-card" data-id="app_5">
-  <img src="assets/icons/app_5.png" alt="سورة الشرح" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh" target="_blank" rel="noopener">سورة الشرح</a></h3>
-  <p>سورة الشرح : تلاوة مؤثرة، قراءة واضحة، وتفسير شامل.بالإضافة الى الأدعية</p>
-  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">30-09-2026</bdi></p>
-  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh" target="_blank" rel="noopener">Google Play</a>
-</div>
-
-<div class="app-card" data-id="app_6">
-  <img src="assets/icons/app_6.png" alt="Flash Light المصباح" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight" target="_blank" rel="noopener">Flash Light المصباح</a></h3>
-  <p>المصباح برنامج تشغيل الاضائة LED</p>
-  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">01-10-2026</bdi></p>
-  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight" target="_blank" rel="noopener">Google Play</a>
-</div>
-
-<div class="app-card" data-id="app_7">
-  <img src="assets/icons/app_7.png" alt="Mobile test hardware" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ" target="_blank" rel="noopener">Mobile test hardware</a></h3>
-  <p>كل ما كنت تود معرفته حول جهازك الأندرويد</p>
-  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">29-09-2024</bdi></p>
-  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ" target="_blank" rel="noopener">Google Play</a>
-</div>
-
-<div class="app-card" data-id="app_8">
-  <img src="assets/icons/app_8.png" alt="معلومات البطارية" class="app-icon">
-  <h3><a href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv" target="_blank" rel="noopener">معلومات البطارية</a></h3>
-  <p>تطبيق البطارية يشير إلى معلومات عن البطارية.</p>
-  <p><strong>المطور</strong>: <bdi dir="ltr">SAMI-ROR-TECH</bdi></p>
-  <p><strong>تاريخ التحديث</strong>: <bdi dir="ltr">25-08-2025</bdi></p>
-  <p><strong>التصنيف العمري</strong>: <bdi dir="ltr">USK: All ages</bdi></p>
-  <p><strong>المنصة</strong>: <bdi dir="ltr">Android</bdi></p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv" target="_blank" rel="noopener">Google Play</a>
+  <p><strong>المنصة</strong>: <bdi dir="ltr">Windows</bdi></p>
 </div>
 <!-- APPS:CARDS:END -->
 </div>
@@ -1130,34 +550,122 @@ footer {
 </section>
 <!-- POLICY:END -->
 
-<section id="contact" class="card fade-in">
-  <h2 data-translate="contactTitle">التواصل</h2>
-  <ul class="list">
-    <li><span data-translate="emailText">البريد الالكتروني:</span> <a href="mailto:sami00880@gmail.com">sami00880@gmail.com</a></li>
+<section id="contact" class="glass reveal">
+  <h2 data-translate="contactBig">لنتحدث</h2>
+  <a class="mail" href="mailto:sami00880@gmail.com">sami00880@gmail.com <span>↗</span></a>
+  <ul>
     <li><span data-translate="officialPage">الصفحة الرسمية:</span> <a href="https://play.google.com/store/apps/dev?id=5869876849822493247" target="_blank" rel="noopener">Google Play</a> · <a href="https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&amp;hl=ar-SA&amp;gl=DE" target="_blank" rel="noopener">Microsoft Store</a></li>
   </ul>
 </section>
+</main>
 
+<footer>© <span id="year"></span> <a href="#about">SAMI-ROR-TECH</a> <span data-translate="rights">— جميع الحقوق محفوظة</span></footer>
 
-<footer>
-© <span id="year"></span> <span id="owner">SAMI-ROR-TECH</span> <span data-translate="rights">— جميع الحقوق محفوظة</span>
-</footer>
-
-<script>
-const d = new Date();
-document.getElementById('year').textContent = d.getFullYear();
-
-window.addEventListener('load', function(){
-  document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
-});
-</script>
 <!-- APPS:DATA:START -->
-<script type="application/json" id="apps-data">{"developer": "SAMI-ROR-TECH", "labels": {"ar": {"developer": "المطور", "updated": "تاريخ التحديث", "age": "التصنيف العمري", "platform": "المنصة", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "الموقع", "all": "الكل", "open_store": "افتح المتجر", "stores_title": "أين تجد تطبيقاتي"}, "en": {"developer": "Developer", "updated": "Last update", "age": "Age rating", "platform": "Platform", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "Website", "all": "All", "open_store": "Open the store", "stores_title": "Where to get my apps"}, "de": {"developer": "Entwickler", "updated": "Letztes Update", "age": "Altersfreigabe", "platform": "Plattform", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "Webseite", "all": "Alle", "open_store": "Store öffnen", "stores_title": "Wo Sie meine Apps finden"}}, "policy": {"url": "privacy.html", "title": {"ar": "سياسة الخصوصية", "en": "Privacy Policy", "de": "Datenschutzerklärung"}, "text": {"ar": "تطبيقاتي مجانية وبلا إعلانات ولا حسابات، ولا أجمع أي بيانات شخصية. التفاصيل الكاملة في صفحة سياسة الخصوصية.", "en": "My apps are free, ad-free and have no accounts, and I do not collect any personal data. The full details are on the privacy policy page.", "de": "Meine Apps sind kostenlos, werbefrei und ohne Konto, und ich erhebe keine personenbezogenen Daten. Alle Details stehen auf der Seite der Datenschutzerklärung."}, "button": {"ar": "اقرأ سياسة الخصوصية", "en": "Read the privacy policy", "de": "Datenschutzerklärung lesen"}}, "stores": [{"id": "android", "icon": "assets/stores/android.svg", "url": "https://play.google.com/store/apps/dev?id=5869876849822493247", "title": {"ar": "تطبيقات أندرويد", "en": "Android apps", "de": "Android-Apps"}, "text": {"ar": "حمّل تطبيقاتي لهواتف وأجهزة أندرويد اللوحية من Google Play.", "en": "Get my apps for Android phones and tablets on Google Play.", "de": "Meine Apps für Android-Smartphones und -Tablets bei Google Play."}}, {"id": "windows", "icon": "assets/stores/windows.svg", "url": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE", "title": {"ar": "تطبيقات ويندوز", "en": "Windows apps", "de": "Windows-Apps"}, "text": {"ar": "برامج لحاسوب ويندوز من Microsoft Store.", "en": "Programs for your Windows computer from the Microsoft Store.", "de": "Programme für Ihren Windows-PC aus dem Microsoft Store."}}, {"id": "amazon", "icon": "assets/stores/amazon.svg", "url": "https://www.amazon.com/gp/product/B0HPBGNXC9", "title": {"ar": "تطبيقات أمازون", "en": "Amazon apps", "de": "Amazon-Apps"}, "text": {"ar": "تطبيقاتي على Amazon Appstore لأجهزة Fire وأندرويد.", "en": "My apps on the Amazon Appstore for Fire devices and Android.", "de": "Meine Apps im Amazon Appstore für Fire-Geräte und Android."}}], "kind_titles": {"android": {"ar": "تطبيقات أندرويد", "en": "Android apps", "de": "Android-Apps"}, "windows": {"ar": "تطبيقات ويندوز", "en": "Windows apps", "de": "Windows-Apps"}, "amazon": {"ar": "تطبيقات أمازون", "en": "Amazon apps", "de": "Amazon-Apps"}}, "apps": [{"id": "app_2", "hidden": false, "icon": "assets/icons/app_2.png", "name": {"ar": "سورة الفاتحة", "en": "سورة الفاتحة", "de": "سورة الفاتحة"}, "desc": {"ar": "يتيح لك الاستماع إلى تلاوة سُورَة اَلْفَاتِحَة مع عرض نصها المكتوب و تفسيرها", "en": "Allows you to listen to the recitation of Surat Al-Fatihah with its written text and interpretation", "de": "Ermöglicht Ihnen, die Rezitation der Surat Al-Fatiha mit ihrem schriftlichen Text und ihrer Interpretation anzuhören"}, "updated": "30-09-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "alikhlas", "hidden": false, "icon": "assets/icons/alikhlas.png", "name": {"ar": "سورة الإخلاص", "en": "سورة الإخلاص", "de": "سورة الإخلاص"}, "desc": {"ar": "تطبيق يتيح لك الاستماع إلى تلاوة لسورة الإخلاص مع عرض نصها المكتوب و تفسيرها", "en": "An application that allows you to listen to a recitation of Surah Al-Ikhlas, with its written text and interpretation displayed.", "de": "Eine Anwendung, mit der Sie eine Rezitation der Sure Al-Ikhlas anhören können, wobei der geschriebene Text und die Interpretation angezeigt werden."}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "my_youtube_channel", "hidden": false, "icon": "assets/icons/my_youtube_channel.png", "name": {"ar": "My channel", "en": "My channel", "de": "My channel"}, "desc": {"ar": "برنامج لعرض قناتي على منصة اليوتيوب", "en": "A program to display my channel on YouTube", "de": "Ein Programm zur Anzeige meines Kanals auf YouTube"}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "al_kursi", "hidden": false, "icon": "assets/icons/al_kursi.png", "name": {"ar": "آية الكرسي", "en": "ayatul kursi", "de": "ayat alkursi"}, "desc": {"ar": "آية الكرسي هو تطبيق مجاني بالصوت والترتيل ومكتوبة بخط جميل", "en": "Ayat al-Kursi is a free application with audio and recitation written", "de": "Ayat al-Kursi ist eine Anwendung mit Audio- und schriftlicher Rezitation"}, "updated": "29-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "verses", "hidden": false, "icon": "assets/icons/verses.png", "name": {"ar": "المعوذات الثلاث", "en": "المعوذات الثلاث", "de": "المعوذات الثلاث"}, "desc": {"ar": "رفيقك اليومي للحماية والتحصين. استمع لتلاوة السور مع التفسير والنص واذكار النوم", "en": "Your daily companion for protection and fortification. Listen to the recitation of the surahs with interpretation, text, and supplications before sleep.", "de": "Dein täglicher Begleiter für Schutz und Stärkung. Höre dir vor dem Schlafengehen die Rezitation der Suren mit Auslegung, Text und Bittgebeten an."}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "video_player", "hidden": false, "icon": "assets/icons/video_player.png", "name": {"ar": "video Player - مشغل الفيديو", "en": "video player", "de": "video Player - مشغل الفيديو"}, "desc": {"ar": "video Player - مشغل الفيديو بكل صيغ أداة تشغيل الفيديو عالي الدقة", "en": "video Player - Video Player All Format HD video player tool", "de": "Video-Player – Video-Player für alle Formate, HD-Video-Player-Tool"}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "keyvault", "hidden": false, "icon": "assets/icons/keyvault.png", "name": {"ar": "KeyVault", "en": "KeyVault", "de": "KeyVault"}, "desc": {"ar": "برنامج ويندوز يحفظ مفاتيح توقيع تطبيقات أندرويد وكلمات سرّها في مكان واحد منظّم، بدون إنترنت وبدون حساب.", "en": "A Windows program that keeps the signing keys of your Android apps and their passwords in one tidy place, with no internet and no account.", "de": "Ein Windows-Programm, das die Signaturschlüssel Ihrer Android-Apps und deren Passwörter an einem übersichtlichen Ort aufbewahrt – ohne Internet und ohne Konto."}, "updated": "", "age": "", "platform": "Windows", "links": {"google_play": "", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["windows"]}, {"id": "app", "hidden": false, "icon": "assets/icons/app.png", "name": {"ar": "لمحة Lamha – شاشة معلومات", "en": "Lamha – Smart Info Screen", "de": "Lamha – Info-Bildschirm"}, "desc": {"ar": "حوّل جوالك أو تلفازك إلى شاشة معلومات هادئة: ساعة وطقس ومواعيد وأذكار.", "en": "Turn your phone, tablet or TV into a calm info screen: clock, weather, notes.", "de": "Handy, Tablet oder TV als ruhiger Infobildschirm: Uhr, Wetter, Termine."}, "updated": "01-11-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=com.samiror.lamha", "microsoft": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE", "amazon": "https://www.amazon.com/gp/product/B0HPBGNXC9", "website": ""}, "kinds": ["android", "windows", "amazon"]}, {"id": "app_3", "hidden": false, "icon": "assets/icons/app_3.png", "name": {"ar": "أصوات الحيوانات", "en": "Animals Sounds", "de": "أصوات الحيوانات"}, "desc": {"ar": "إضغط واستمع! تعرّف على أصوات الحيوانات الأليفة والمفترسة بواجهة سهلة وجذابة", "en": "Tap & Listen! Explore pet and wild animal sounds in a fun, easy way", "de": "Tippen und zuhören! Entdecken Sie die Geräusche von Haustieren und Raubtieren mit einer einfachen und ansprechenden Benutzeroberfläche."}, "updated": "03-10-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_4", "hidden": false, "icon": "assets/icons/app_4.png", "name": {"ar": "التكاثر", "en": "التكاثر", "de": "التكاثر"}, "desc": {"ar": "ستمع واقرأ وتدبر معاني سورة التكاثر. مع التفسير الميسر وبعض الادعية من القرآن.", "en": "Listen, read, and reflect upon the meanings of Surah At-Takathur, along with a simplified explanation and some supplications from the Quran.", "de": "Hören, lesen und reflektieren Sie die Bedeutung der Sure At-Takathur, zusammen mit einer vereinfachten Erklärung und einigen Bittgebeten aus dem Koran."}, "updated": "02-10-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_5", "hidden": false, "icon": "assets/icons/app_5.png", "name": {"ar": "سورة الشرح", "en": "سورة الشرح", "de": "سورة الشرح"}, "desc": {"ar": "سورة الشرح : تلاوة مؤثرة، قراءة واضحة، وتفسير شامل.بالإضافة الى الأدعية", "en": "Surah Ash-Sharh: A moving recitation, clear reading, and comprehensive interpretation, in addition to supplications.", "de": "Sure Asch-Schar: Eine bewegende Rezitation, klare Lesung und umfassende Interpretation, zusätzlich zu Bittgebeten."}, "updated": "30-09-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_6", "hidden": false, "icon": "assets/icons/app_6.png", "name": {"ar": "Flash Light المصباح", "en": "Flash Light المصباح", "de": "Blitzlicht"}, "desc": {"ar": "المصباح برنامج تشغيل الاضائة LED", "en": "LED lighting driver program", "de": "Treibersoftware für LED-Beleuchtung"}, "updated": "01-10-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_7", "hidden": false, "icon": "assets/icons/app_7.png", "name": {"ar": "Mobile test hardware", "en": "Mobile test hardware", "de": "Mobile Testhardware"}, "desc": {"ar": "كل ما كنت تود معرفته حول جهازك الأندرويد", "en": "Everything you wanted to know about your Android device", "de": "Alles, was Sie über Ihr Android-Gerät wissen wollten"}, "updated": "29-09-2024", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_8", "hidden": false, "icon": "assets/icons/app_8.png", "name": {"ar": "معلومات البطارية", "en": "معلومات البطارية", "de": "معلومات البطارية"}, "desc": {"ar": "تطبيق البطارية يشير إلى معلومات عن البطارية.", "en": "Battery application indicates information about the battery.", "de": "Die Batterieanwendung zeigt Informationen über die Batterie an."}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}]}</script>
+<script type="application/json" id="apps-data">{"developer": "SAMI-ROR-TECH", "labels": {"ar": {"developer": "المطور", "updated": "تاريخ التحديث", "age": "التصنيف العمري", "platform": "المنصة", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "الموقع", "all": "الكل", "open_store": "افتح المتجر", "stores_title": "أين تجد تطبيقاتي"}, "en": {"developer": "Developer", "updated": "Last update", "age": "Age rating", "platform": "Platform", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "Website", "all": "All", "open_store": "Open the store", "stores_title": "Where to get my apps"}, "de": {"developer": "Entwickler", "updated": "Letztes Update", "age": "Altersfreigabe", "platform": "Plattform", "google_play": "Google Play", "microsoft": "Microsoft Store", "amazon": "Amazon Appstore", "website": "Webseite", "all": "Alle", "open_store": "Store öffnen", "stores_title": "Wo Sie meine Apps finden"}}, "policy": {"url": "privacy.html", "title": {"ar": "سياسة الخصوصية", "en": "Privacy Policy", "de": "Datenschutzerklärung"}, "text": {"ar": "تطبيقاتي مجانية وبلا إعلانات ولا حسابات، ولا أجمع أي بيانات شخصية. التفاصيل الكاملة في صفحة سياسة الخصوصية.", "en": "My apps are free, ad-free and have no accounts, and I do not collect any personal data. The full details are on the privacy policy page.", "de": "Meine Apps sind kostenlos, werbefrei und ohne Konto, und ich erhebe keine personenbezogenen Daten. Alle Details stehen auf der Seite der Datenschutzerklärung."}, "button": {"ar": "اقرأ سياسة الخصوصية", "en": "Read the privacy policy", "de": "Datenschutzerklärung lesen"}}, "stores": [{"id": "android", "icon": "assets/stores/android.svg", "url": "https://play.google.com/store/apps/dev?id=5869876849822493247", "title": {"ar": "تطبيقات أندرويد", "en": "Android apps", "de": "Android-Apps"}, "text": {"ar": "حمّل تطبيقاتي لهواتف وأجهزة أندرويد اللوحية من Google Play.", "en": "Get my apps for Android phones and tablets on Google Play.", "de": "Meine Apps für Android-Smartphones und -Tablets bei Google Play."}}, {"id": "windows", "icon": "assets/stores/windows.svg", "url": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE", "title": {"ar": "تطبيقات ويندوز", "en": "Windows apps", "de": "Windows-Apps"}, "text": {"ar": "برامج لحاسوب ويندوز من Microsoft Store.", "en": "Programs for your Windows computer from the Microsoft Store.", "de": "Programme für Ihren Windows-PC aus dem Microsoft Store."}}, {"id": "amazon", "icon": "assets/stores/amazon.svg", "url": "https://www.amazon.com/gp/product/B0HPBGNXC9", "title": {"ar": "تطبيقات أمازون", "en": "Amazon apps", "de": "Amazon-Apps"}, "text": {"ar": "تطبيقاتي على Amazon Appstore لأجهزة Fire وأندرويد.", "en": "My apps on the Amazon Appstore for Fire devices and Android.", "de": "Meine Apps im Amazon Appstore für Fire-Geräte und Android."}}], "kind_titles": {"android": {"ar": "تطبيقات أندرويد", "en": "Android apps", "de": "Android-Apps"}, "windows": {"ar": "تطبيقات ويندوز", "en": "Windows apps", "de": "Windows-Apps"}, "amazon": {"ar": "تطبيقات أمازون", "en": "Amazon apps", "de": "Amazon-Apps"}}, "apps": [{"id": "app_2", "hidden": false, "icon": "assets/icons/app_2.png", "name": {"ar": "سورة الفاتحة", "en": "سورة الفاتحة", "de": "سورة الفاتحة"}, "desc": {"ar": "يتيح لك الاستماع إلى تلاوة سُورَة اَلْفَاتِحَة مع عرض نصها المكتوب و تفسيرها", "en": "Allows you to listen to the recitation of Surat Al-Fatihah with its written text and interpretation", "de": "Ermöglicht Ihnen, die Rezitation der Surat Al-Fatiha mit ihrem schriftlichen Text und ihrer Interpretation anzuhören"}, "updated": "30-09-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "alikhlas", "hidden": false, "icon": "assets/icons/alikhlas.png", "name": {"ar": "سورة الإخلاص", "en": "سورة الإخلاص", "de": "سورة الإخلاص"}, "desc": {"ar": "تطبيق يتيح لك الاستماع إلى تلاوة لسورة الإخلاص مع عرض نصها المكتوب و تفسيرها", "en": "An application that allows you to listen to a recitation of Surah Al-Ikhlas, with its written text and interpretation displayed.", "de": "Eine Anwendung, mit der Sie eine Rezitation der Sure Al-Ikhlas anhören können, wobei der geschriebene Text und die Interpretation angezeigt werden."}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "my_youtube_channel", "hidden": false, "icon": "assets/icons/my_youtube_channel.png", "name": {"ar": "My channel", "en": "My channel", "de": "My channel"}, "desc": {"ar": "برنامج لعرض قناتي على منصة اليوتيوب", "en": "A program to display my channel on YouTube", "de": "Ein Programm zur Anzeige meines Kanals auf YouTube"}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.My_YouTube_channel", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "al_kursi", "hidden": false, "icon": "assets/icons/al_kursi.png", "name": {"ar": "آية الكرسي", "en": "ayatul kursi", "de": "ayat alkursi"}, "desc": {"ar": "آية الكرسي هو تطبيق مجاني بالصوت والترتيل ومكتوبة بخط جميل", "en": "Ayat al-Kursi is a free application with audio and recitation written", "de": "Ayat al-Kursi ist eine Anwendung mit Audio- und schriftlicher Rezitation"}, "updated": "29-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.al_Kursi", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "verses", "hidden": false, "icon": "assets/icons/verses.png", "name": {"ar": "المعوذات الثلاث", "en": "المعوذات الثلاث", "de": "المعوذات الثلاث"}, "desc": {"ar": "رفيقك اليومي للحماية والتحصين. استمع لتلاوة السور مع التفسير والنص واذكار النوم", "en": "Your daily companion for protection and fortification. Listen to the recitation of the surahs with interpretation, text, and supplications before sleep.", "de": "Dein täglicher Begleiter für Schutz und Stärkung. Höre dir vor dem Schlafengehen die Rezitation der Suren mit Auslegung, Text und Bittgebeten an."}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.Verses_of_the_exorcist", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "video_player", "hidden": false, "icon": "assets/icons/video_player.png", "name": {"ar": "video Player - مشغل الفيديو", "en": "video player", "de": "video Player - مشغل الفيديو"}, "desc": {"ar": "video Player - مشغل الفيديو بكل صيغ أداة تشغيل الفيديو عالي الدقة", "en": "video Player - Video Player All Format HD video player tool", "de": "Video-Player – Video-Player für alle Formate, HD-Video-Player-Tool"}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "Android", "links": {"google_play": "https://play.google.com/store/apps/details?id=com.sami.ror.tech.videoPlayer", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_3", "hidden": false, "icon": "assets/icons/app_3.png", "name": {"ar": "أصوات الحيوانات", "en": "Animals Sounds", "de": "أصوات الحيوانات"}, "desc": {"ar": "إضغط واستمع! تعرّف على أصوات الحيوانات الأليفة والمفترسة بواجهة سهلة وجذابة", "en": "Tap & Listen! Explore pet and wild animal sounds in a fun, easy way", "de": "Tippen und zuhören! Entdecken Sie die Geräusche von Haustieren und Raubtieren mit einer einfachen und ansprechenden Benutzeroberfläche."}, "updated": "03-10-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_4", "hidden": false, "icon": "assets/icons/app_4.png", "name": {"ar": "التكاثر", "en": "التكاثر", "de": "التكاثر"}, "desc": {"ar": "ستمع واقرأ وتدبر معاني سورة التكاثر. مع التفسير الميسر وبعض الادعية من القرآن.", "en": "Listen, read, and reflect upon the meanings of Surah At-Takathur, along with a simplified explanation and some supplications from the Quran.", "de": "Hören, lesen und reflektieren Sie die Bedeutung der Sure At-Takathur, zusammen mit einer vereinfachten Erklärung und einigen Bittgebeten aus dem Koran."}, "updated": "02-10-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Al_Takathur", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_5", "hidden": false, "icon": "assets/icons/app_5.png", "name": {"ar": "سورة الشرح", "en": "سورة الشرح", "de": "سورة الشرح"}, "desc": {"ar": "سورة الشرح : تلاوة مؤثرة، قراءة واضحة، وتفسير شامل.بالإضافة الى الأدعية", "en": "Surah Ash-Sharh: A moving recitation, clear reading, and comprehensive interpretation, in addition to supplications.", "de": "Sure Asch-Schar: Eine bewegende Rezitation, klare Lesung und umfassende Interpretation, zusätzlich zu Bittgebeten."}, "updated": "30-09-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AshSharh", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_6", "hidden": false, "icon": "assets/icons/app_6.png", "name": {"ar": "Flash Light المصباح", "en": "Flash Light المصباح", "de": "Blitzlicht"}, "desc": {"ar": "المصباح برنامج تشغيل الاضائة LED", "en": "LED lighting driver program", "de": "Treibersoftware für LED-Beleuchtung"}, "updated": "01-10-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.flashlight", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_7", "hidden": false, "icon": "assets/icons/app_7.png", "name": {"ar": "Mobile test hardware", "en": "Mobile test hardware", "de": "Mobile Testhardware"}, "desc": {"ar": "كل ما كنت تود معرفته حول جهازك الأندرويد", "en": "Everything you wanted to know about your Android device", "de": "Alles, was Sie über Ihr Android-Gerät wissen wollten"}, "updated": "29-09-2024", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.CPU_AtoZ", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app_8", "hidden": false, "icon": "assets/icons/app_8.png", "name": {"ar": "معلومات البطارية", "en": "معلومات البطارية", "de": "معلومات البطارية"}, "desc": {"ar": "تطبيق البطارية يشير إلى معلومات عن البطارية.", "en": "Battery application indicates information about the battery.", "de": "Die Batterieanwendung zeigt Informationen über die Batterie an."}, "updated": "25-08-2025", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["android"]}, {"id": "app", "hidden": false, "icon": "assets/icons/app.png", "name": {"ar": "لمحة Lamha – شاشة معلومات", "en": "Lamha – Smart Info Screen", "de": "Lamha – Info-Bildschirm"}, "desc": {"ar": "حوّل جوالك أو تلفازك إلى شاشة معلومات هادئة: ساعة وطقس ومواعيد وأذكار.", "en": "Turn your phone, tablet or TV into a calm info screen: clock, weather, notes.", "de": "Handy, Tablet oder TV als ruhiger Infobildschirm: Uhr, Wetter, Termine."}, "updated": "01-11-2026", "age": "USK: All ages", "platform": "", "links": {"google_play": "https://play.google.com/store/apps/details?id=com.samiror.lamha", "microsoft": "https://apps.microsoft.com/search/publisher?name=SAMI-ROR-TECH&hl=ar-SA&gl=DE", "amazon": "https://www.amazon.com/gp/product/B0HPBGNXC9", "website": ""}, "kinds": ["android", "windows", "amazon"]}, {"id": "keyvault", "hidden": false, "icon": "assets/icons/keyvault.png", "name": {"ar": "KeyVault", "en": "KeyVault", "de": "KeyVault"}, "desc": {"ar": "برنامج ويندوز يحفظ مفاتيح توقيع تطبيقات أندرويد وكلمات سرّها في مكان واحد منظّم، بدون إنترنت وبدون حساب.", "en": "A Windows program that keeps the signing keys of your Android apps and their passwords in one tidy place, with no internet and no account.", "de": "Ein Windows-Programm, das die Signaturschlüssel Ihrer Android-Apps und deren Passwörter an einem übersichtlichen Ort aufbewahrt – ohne Internet und ohne Konto."}, "updated": "", "age": "", "platform": "Windows", "links": {"google_play": "", "microsoft": "", "amazon": "", "website": ""}, "kinds": ["windows"]}]}</script>
 <!-- APPS:DATA:END -->
 <script src="assets/apps-render.js"></script>
+<script src="assets/fx.js"></script>
+<script>
+(function () {
+  'use strict';
+  var translations = {
+    ar: {
+      about: "عنّي", apps: "تطبيقاتي", privacy: "سياسة الخصوصية", contact: "تواصل",
+      title: "الصفحة الرسمية | عنّي + تطبيقاتي + سياسة الخصوصية",
+      badge: "متاح على أندرويد · ويندوز · أمازون", welcome: "مرحبًا، أنا", name: "سامي",
+      role: "مطوّر تطبيقات لأندرويد وويندوز وأمازون، متخصص في بناء حلول رقمية تركز على البساطة والأداء والخصوصية.",
+      ctaApps: "تصفّح تطبيقاتي", ctaContact: "تواصل معي", aboutTitle: "نبذة عني",
+      aboutText: "أهلاً بكم في عالمي الرقمي! أنا سامي، مطوّر شغوف بتحويل الأفكار إلى تطبيقات عملية. منذ بدايتي في مجال البرمجة، وأنا أؤمن بأن التطبيقات الجيدة هي تلك التي تحل مشاكل حقيقية بتجربة مستخدم استثنائية. كل تطبيق أطلقه هو نتاج بحث وتطوير دقيق لضمان أداء ممتاز وخصوصية محفوظة.",
+      missionLabel: "رسالتي", missionText: "رسالتي هي تطوير تطبيقات تثري حياة المستخدمين اليومية دون تعقيد، مع الحفاظ على أعلى معايير الجودة والأمان.",
+      appsTitle: "تطبيقاتي", contactTitle: "التواصل", contactBig: "لنتحدث", emailText: "البريد الالكتروني:", officialPage: "الصفحة الرسمية:", rights: "— جميع الحقوق محفوظة."
+    },
+    en: {
+      about: "About Me", apps: "My Apps", privacy: "Privacy Policy", contact: "Contact",
+      title: "Official Page | About Me + My Apps + Privacy Policy",
+      badge: "Available on Android · Windows · Amazon", welcome: "Hello, I'm", name: "Sami",
+      role: "Developer of apps for Android, Windows and Amazon, specialized in building digital solutions focused on simplicity, performance, and privacy.",
+      ctaApps: "Browse my apps", ctaContact: "Get in touch", aboutTitle: "Brief Summary",
+      aboutText: "Welcome to my digital world! I'm Sami, a passionate developer who transforms ideas into practical applications. Since my beginning in programming, I've believed that good apps are those that solve real problems with exceptional user experience. Every app I launch is the product of careful research and development to ensure excellent performance and preserved privacy.",
+      missionLabel: "My mission", missionText: "My mission is to develop applications that enrich users' daily lives without complexity, while maintaining the highest standards of quality and security.",
+      appsTitle: "My Applications", contactTitle: "Contact", contactBig: "Let's talk", emailText: "Email:", officialPage: "Official Page:", rights: "— All Rights Reserved."
+    },
+    de: {
+      about: "Über mich", apps: "Meine Apps", privacy: "Datenschutz", contact: "Kontakt",
+      title: "Offizielle Seite | Über mich + Meine Apps + Datenschutz",
+      badge: "Verfügbar für Android · Windows · Amazon", welcome: "Hallo, ich bin", name: "Sami",
+      role: "Entwickler von Apps für Android, Windows und Amazon, spezialisiert auf digitale Lösungen mit Fokus auf Einfachheit, Leistung und Datenschutz.",
+      ctaApps: "Meine Apps ansehen", ctaContact: "Kontakt aufnehmen", aboutTitle: "Kurzvorstellung",
+      aboutText: "Willkommen in meiner digitalen Welt! Ich bin Sami, ein leidenschaftlicher Entwickler, der Ideen in praktische Apps verwandelt. Seit meinen Anfängen in der Programmierung glaube ich, dass gute Apps echte Probleme mit einer außergewöhnlichen Nutzererfahrung lösen. Jede App, die ich veröffentliche, ist das Ergebnis sorgfältiger Recherche und Entwicklung für hervorragende Leistung und geschützte Privatsphäre.",
+      missionLabel: "Meine Mission", missionText: "Meine Mission ist es, Apps zu entwickeln, die den Alltag der Nutzer ohne Komplexität bereichern – bei höchsten Standards für Qualität und Sicherheit.",
+      appsTitle: "Meine Anwendungen", contactTitle: "Kontakt", contactBig: "Lass uns reden", emailText: "E-Mail:", officialPage: "Offizielle Seite:", rights: "— Alle Rechte vorbehalten."
+    }
+  };
+  var LANGS = ['ar', 'en', 'de'];
+  function storageOk() { try { var k = '__t'; localStorage.setItem(k, k); localStorage.removeItem(k); return true; } catch (e) { return false; } }
+  function langFromUrl() {
+    try {
+      var p = new URLSearchParams(location.search).get('lang'); if (LANGS.indexOf(p) >= 0) return p;
+      var h = location.hash.replace('#', ''); if (LANGS.indexOf(h) >= 0) return h;
+      var m = h.match(/lang=(ar|en|de)/); if (m) return m[1];
+    } catch (e) {}
+    return null;
+  }
+  function setLangInUrl(lang) { try { var q = new URLSearchParams(location.search); q.set('lang', lang); history.replaceState(null, '', location.pathname + '?' + q.toString() + location.hash); } catch (e) {} }
+
+  function applyTranslations(lang) {
+    if (!translations[lang]) return;
+    var d = document.documentElement; d.lang = lang; d.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = translations[lang].title || document.title;
+    document.querySelectorAll('[data-translate]').forEach(function (el) { var v = translations[lang][el.getAttribute('data-translate')]; if (v) el.textContent = v; });
+    LANGS.forEach(function (l) { var b = document.getElementById('lang-' + l); if (b) b.classList.toggle('active', l === lang); });
+    if (window.renderApps) window.renderApps(lang);
+    if (window.fxAfterLang) window.fxAfterLang();
+  }
+  window.setAppLang = function (lang) {
+    if (LANGS.indexOf(lang) < 0) return;
+    applyTranslations(lang); setLangInUrl(lang);
+    if (storageOk()) localStorage.setItem('language', lang);
+  };
+
+  function init() {
+    var saved = storageOk() ? localStorage.getItem('language') : null;
+    applyTranslations(langFromUrl() || (LANGS.indexOf(saved) >= 0 ? saved : null) || 'ar');
+    LANGS.forEach(function (l) { var b = document.getElementById('lang-' + l); if (b) b.addEventListener('click', function () { window.setAppLang(l); }); });
+
+    var tb = document.getElementById('theme-toggle');
+    if (tb) tb.addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', cur);
+      var m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = cur === 'light' ? '#f4f6fc' : '#02030a';
+      try { localStorage.setItem('theme', cur); } catch (e) {}
+    });
+    var mt = document.getElementById('menu-toggle'), links = document.getElementById('links');
+    if (mt && links) {
+      mt.addEventListener('click', function () { links.classList.toggle('active'); });
+      links.addEventListener('click', function (e) { if (e.target.tagName === 'A') links.classList.remove('active'); });
+    }
+    var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+    var bar = document.getElementById('progress');
+    function onScroll() { var h = document.documentElement.scrollHeight - innerHeight; if (bar) bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')'; }
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    ['.store-tiles', '#privacy-policy'].forEach(function (s) { var n = document.querySelector(s); if (n) n.classList.add('reveal'); });
+    var rev = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 });
+      rev.forEach(function (el) { io.observe(el); });
+    } else { rev.forEach(function (el) { el.classList.add('in'); }); }
+
+    var navLinks = [].slice.call(document.querySelectorAll('.links a'));
+    if ('IntersectionObserver' in window) {
+      var so = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) return; navLinks.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id); }); }); }, { rootMargin: '-40% 0px -55% 0px' });
+      ['about', 'apps', 'privacy-policy', 'contact'].forEach(function (id) { var n = document.getElementById(id); if (n) so.observe(n); });
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+</script>
 </body>
-
 </html>
-
-
-
