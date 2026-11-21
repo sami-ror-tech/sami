@@ -148,7 +148,7 @@
     },
     {
       "id": "keyvault",
-      "hidden": true,
+      "hidden": false,
       "icon": "assets/icons/keyvault.png",
       "name": {
         "ar": "KeyVault",
@@ -209,7 +209,7 @@
         "de": "Ermöglicht Ihnen, die Rezitation der Surat Al-Fatiha mit ihrem schriftlichen Text und ihrer Interpretation anzuhören"
       },
       "updated": "21-11-2026",
-      "age": "",
+      "age": "USK: All ages",
       "platform": "",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
