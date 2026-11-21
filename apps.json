@@ -27,6 +27,31 @@
   },
   "apps": [
     {
+      "id": "app_2",
+      "hidden": false,
+      "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
+      "icon": "assets/icons/app_2.png",
+      "name": {
+        "ar": "سورة الفاتحة",
+        "en": "سورة الفاتحة",
+        "de": "سورة الفاتحة"
+      },
+      "desc": {
+        "ar": "يتيح لك الاستماع إلى تلاوة سُورَة اَلْفَاتِحَة مع عرض نصها المكتوب و تفسيرها",
+        "en": "Allows you to listen to the recitation of Surat Al-Fatihah with its written text and interpretation",
+        "de": "Ermöglicht Ihnen, die Rezitation der Surat Al-Fatiha mit ihrem schriftlichen Text und ihrer Interpretation anzuhören"
+      },
+      "updated": "30-09-2026",
+      "age": "USK: All ages",
+      "platform": "",
+      "links": {
+        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
+        "microsoft": "",
+        "amazon": "",
+        "website": ""
+      }
+    },
+    {
       "id": "alikhlas",
       "hidden": false,
       "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.AlIkhlas",
@@ -202,25 +227,25 @@
       }
     },
     {
-      "id": "app_2",
+      "id": "app_3",
       "hidden": false,
-      "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
-      "icon": "assets/icons/app_2.png",
+      "source": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds",
+      "icon": "assets/icons/app_3.png",
       "name": {
-        "ar": "سورة الفاتحة",
-        "en": "سورة الفاتحة",
-        "de": "سورة الفاتحة"
+        "ar": "أصوات الحيوانات",
+        "en": "Animals Sounds",
+        "de": "أصوات الحيوانات"
       },
       "desc": {
-        "ar": "يتيح لك الاستماع إلى تلاوة سُورَة اَلْفَاتِحَة مع عرض نصها المكتوب و تفسيرها",
-        "en": "Allows you to listen to the recitation of Surat Al-Fatihah with its written text and interpretation",
-        "de": "Ermöglicht Ihnen, die Rezitation der Surat Al-Fatiha mit ihrem schriftlichen Text und ihrer Interpretation anzuhören"
+        "ar": "إضغط واستمع! تعرّف على أصوات الحيوانات الأليفة والمفترسة بواجهة سهلة وجذابة",
+        "en": "Tap & Listen! Explore pet and wild animal sounds in a fun, easy way",
+        "de": "Tippen und zuhören! Entdecken Sie die Geräusche von Haustieren und Raubtieren mit einer einfachen und ansprechenden Benutzeroberfläche."
       },
-      "updated": "30-09-2026",
+      "updated": "03-10-2026",
       "age": "USK: All ages",
       "platform": "",
       "links": {
-        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
+        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Animals_Sounds",
         "microsoft": "",
         "amazon": "",
         "website": ""
