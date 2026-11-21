@@ -27,30 +27,6 @@
   },
   "apps": [
     {
-      "id": "alfatiha",
-      "hidden": false,
-      "icon": "assets/icons/alfatiha.png",
-      "name": {
-        "ar": "سورة الفاتحة",
-        "en": "Surah Al-Fatiha",
-        "de": "Sure Al-Fatiha"
-      },
-      "desc": {
-        "ar": "تطبيق بسيط لتشغيل سورة الفاتحة بدون إعلانات، مع إمكانية تشغيل/إيقاف الصوت.",
-        "en": "A simple app to play Surah Al-Fatiha without ads, with play/stop sound capability.",
-        "de": "Eine einfache App zum Abspielen der Sure Al-Fatiha ohne Werbung, mit Start-/Stopp-Funktion für den Ton."
-      },
-      "updated": "25-08-2025",
-      "age": "PEGI 3",
-      "platform": "Android",
-      "links": {
-        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
-        "microsoft": "",
-        "amazon": "",
-        "website": ""
-      }
-    },
-    {
       "id": "alikhlas",
       "hidden": false,
       "icon": "assets/icons/alikhlas.png",
@@ -213,6 +189,30 @@
       "platform": "",
       "links": {
         "google_play": "https://play.google.com/store/apps/details?id=com.samiror.lamha",
+        "microsoft": "",
+        "amazon": "",
+        "website": ""
+      }
+    },
+    {
+      "id": "app_2",
+      "hidden": false,
+      "icon": "assets/icons/app_2.png",
+      "name": {
+        "ar": "سورة الفاتحة",
+        "en": "سورة الفاتحة",
+        "de": "سورة الفاتحة"
+      },
+      "desc": {
+        "ar": "يتيح لك الاستماع إلى تلاوة سُورَة اَلْفَاتِحَة مع عرض نصها المكتوب و تفسيرها",
+        "en": "Allows you to listen to the recitation of Surat Al-Fatihah with its written text and interpretation",
+        "de": "Ermöglicht Ihnen, die Rezitation der Surat Al-Fatiha mit ihrem schriftlichen Text und ihrer Interpretation anzuhören"
+      },
+      "updated": "21-11-2026",
+      "age": "",
+      "platform": "",
+      "links": {
+        "google_play": "https://play.google.com/store/apps/details?id=appinventor.ai_sami00880.Alfatiha",
         "microsoft": "",
         "amazon": "",
         "website": ""
