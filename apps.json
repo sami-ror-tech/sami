@@ -171,30 +171,6 @@
       }
     },
     {
-      "id": "lamha",
-      "hidden": true,
-      "icon": "",
-      "name": {
-        "ar": "لمحة",
-        "en": "Lamha Smart Info Screen",
-        "de": ""
-      },
-      "desc": {
-        "ar": "",
-        "en": "",
-        "de": ""
-      },
-      "updated": "",
-      "age": "",
-      "platform": "Android / Windows",
-      "links": {
-        "google_play": "",
-        "microsoft": "",
-        "amazon": "https://www.amazon.com/gp/product/B0HPBGNXC9",
-        "website": ""
-      }
-    },
-    {
       "id": "keyvault",
       "hidden": true,
       "icon": "assets/icons/keyvault.png",
@@ -213,6 +189,30 @@
       "platform": "Windows",
       "links": {
         "google_play": "",
+        "microsoft": "",
+        "amazon": "",
+        "website": ""
+      }
+    },
+    {
+      "id": "app",
+      "hidden": false,
+      "icon": "assets/icons/app.png",
+      "name": {
+        "ar": "لمحة Lamha – شاشة معلومات",
+        "en": "Lamha – Smart Info Screen",
+        "de": "Lamha – Info-Bildschirm"
+      },
+      "desc": {
+        "ar": "حوّل جوالك أو تلفازك إلى شاشة معلومات هادئة: ساعة وطقس ومواعيد وأذكار.",
+        "en": "Turn your phone, tablet or TV into a calm info screen: clock, weather, notes.",
+        "de": "Handy, Tablet oder TV als ruhiger Infobildschirm: Uhr, Wetter, Termine."
+      },
+      "updated": "21-11-2026",
+      "age": "",
+      "platform": "",
+      "links": {
+        "google_play": "https://play.google.com/store/apps/details?id=com.samiror.lamha",
         "microsoft": "",
         "amazon": "",
         "website": ""
