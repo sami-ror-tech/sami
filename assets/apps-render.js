@@ -34,7 +34,8 @@
   function field(label, value) {
     var p = node('p');
     p.appendChild(node('strong', null, label));
-    p.appendChild(document.createTextNode(': ' + value));
+    p.appendChild(document.createTextNode(': '));
+    p.appendChild(node('bdi', { dir: 'ltr' }, value));   // dates/numbers keep their written order inside Arabic text
     return p;
   }
 
@@ -53,8 +54,10 @@
     c.appendChild(h);
     if (desc) c.appendChild(node('p', null, desc));
     c.appendChild(field(lab.developer || 'Developer', data.developer || ''));
+    var names = { android: 'Android', windows: 'Windows', amazon: 'Amazon' };
+    var plat = String(app.platform || '').trim() || (app.kinds || []).map(function (k) { return names[k]; }).join(', ');
     [['updated', 'updated'], ['age', 'age'], ['platform', 'platform']].forEach(function (pair) {
-      var v = String(app[pair[1]] || '').trim();
+      var v = pair[1] === 'platform' ? plat : String(app[pair[1]] || '').trim();
       if (v) c.appendChild(field(lab[pair[0]] || pair[0], v));
     });
     links.forEach(function (l) {
