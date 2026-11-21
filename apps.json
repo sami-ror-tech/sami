@@ -350,6 +350,31 @@
         "amazon": "",
         "website": ""
       }
+    },
+    {
+      "id": "app_8",
+      "hidden": false,
+      "source": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv",
+      "icon": "assets/icons/app_8.png",
+      "name": {
+        "ar": "معلومات البطارية",
+        "en": "معلومات البطارية",
+        "de": "معلومات البطارية"
+      },
+      "desc": {
+        "ar": "تطبيق البطارية يشير إلى معلومات عن البطارية.",
+        "en": "Battery application indicates information about the battery.",
+        "de": "Die Batterieanwendung zeigt Informationen über die Batterie an."
+      },
+      "updated": "25-08-2025",
+      "age": "USK: All ages",
+      "platform": "",
+      "links": {
+        "google_play": "https://play.google.com/store/apps/details?id=io.kodular.sami00880.tv",
+        "microsoft": "",
+        "amazon": "",
+        "website": ""
+      }
     }
   ],
   "stores": [
