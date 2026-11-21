@@ -163,7 +163,7 @@
       "privacy": "https://sami-ror-tech01.blogspot.com/2024/04/video-player.html",
       "icon": "assets/icons/video_player.png",
       "name": {
-        "ar": "video Player - مشغل الفيديو",
+        "ar": "video Player",
         "en": "video player",
         "de": "video Player - مشغل الفيديو"
       },
@@ -345,7 +345,7 @@
       "privacy": "https://sami-ror-tech01.blogspot.com/2026/10/lamha.html",
       "icon": "assets/icons/app.png",
       "name": {
-        "ar": "لمحة Lamha – شاشة معلومات",
+        "ar": "لمحة Lamha",
         "en": "Lamha – Smart Info Screen",
         "de": "Lamha – Info-Bildschirm"
       },
