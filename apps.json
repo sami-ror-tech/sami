@@ -389,32 +389,6 @@
         "amazon": "",
         "website": ""
       }
-    },
-    {
-      "id": "app_9",
-      "hidden": false,
-      "source": "",
-      "privacy": "",
-      "icon": "assets/icons/app_9.png",
-      "name": {
-        "ar": "تجريب",
-        "en": "تطبيق جديد",
-        "de": ""
-      },
-      "desc": {
-        "ar": "",
-        "en": "",
-        "de": ""
-      },
-      "updated": "",
-      "age": "",
-      "platform": "",
-      "links": {
-        "google_play": "",
-        "microsoft": "",
-        "amazon": "",
-        "website": ""
-      }
     }
   ],
   "stores": [
