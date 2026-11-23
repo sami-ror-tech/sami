@@ -1,0 +1,21 @@
+﻿# Deploys the site to Firebase Hosting (https://sami-ror-tech.web.app)
+# every time something is pushed to main (e.g. from SitePanel).
+
+name: Deploy to Firebase Hosting
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SAMI_ROR_TECH }}
+          channelId: live
+          projectId: sami-ror-tech
